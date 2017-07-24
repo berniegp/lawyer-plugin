@@ -269,7 +269,7 @@ if ( ! function_exists( 'lawyer_search_lawyers' ) ) {
 
 	function lawyer_search_lawyers( $query ) {
 
-		if ( is_tax( 'sectors' ) ) {
+		if ( $query->is_main_query() && is_tax( 'sectors' ) ) {
 			$people_pagination = lawyer_get_options('people_pagination', 10 );
 			$query->set( 'posts_per_page', $people_pagination );
 		}
@@ -309,7 +309,7 @@ if ( ! function_exists( 'lawyer_search_lawyers' ) ) {
 			}
 		}
 
-		if ( is_tax('practice') ) {
+		if ( $query->is_main_query() && is_tax('practice') ) {
 			$term = get_queried_object();
 			$term_data = get_term_meta( $term->term_id, 'practice_fields', true );
 

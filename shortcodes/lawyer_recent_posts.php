@@ -115,6 +115,8 @@ class WPBakeryShortCode_recent_posts extends WPBakeryShortCode{
 			'post_type'      	  => 'post',
 			'posts_per_page' 	  => $posts_number,
 			'ignore_sticky_posts' => true,
+			'orderby'             => 'ID',
+			'order'               => 'ASC',
 			'tax_query'      	  => array(
 				$cat_args
 			)
