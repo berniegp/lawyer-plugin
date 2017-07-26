@@ -20,7 +20,6 @@ function lawyer_get_pixels_size( $option, $default ) {
 	} else {
 		$size = $default;
 	}
-	var_dump($size);
 	return $size;
 }
 
