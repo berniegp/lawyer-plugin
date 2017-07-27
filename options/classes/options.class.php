@@ -291,6 +291,34 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
 
       break;
 
+      case 'menus':
+      case 'menu':
+
+        $menus = wp_get_nav_menus( $query_args );
+
+        if ( ! is_wp_error( $menus ) && ! empty( $menus ) ) {
+          foreach ( $menus as $menu ) {
+            $options[$menu->term_id] = $menu->name;
+          }
+        }
+
+      break;
+
+      case 'post_types':
+      case 'post_type':
+
+        $post_types = get_post_types( array(
+          'show_in_nav_menus' => true
+        ) );
+
+        if ( ! is_wp_error( $post_types ) && ! empty( $post_types ) ) {
+          foreach ( $post_types as $post_type ) {
+            $options[$post_type] = ucfirst($post_type);
+          }
+        }
+
+      break;
+
       case 'custom':
       case 'callback':
 

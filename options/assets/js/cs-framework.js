@@ -47,7 +47,7 @@
 
         } else {
 
-          $('#cs-tab-'+$target).fadeIn('fast').siblings().hide();
+          $('#cs-tab-'+$target).show().siblings().hide();
           $nav.find('a').removeClass('cs-section-active');
           $el.addClass('cs-section-active');
           $reset.val($target);
@@ -333,7 +333,7 @@
         wp_media_frame.on( 'select', function() {
 
           var attachment = wp_media_frame.state().get('selection').first().attributes;
-          var thumbnail  = ( typeof attachment.sizes.thumbnail !== 'undefined' ) ? attachment.sizes.thumbnail.url : attachment.url;
+          var thumbnail = ( typeof attachment.sizes !== 'undefined' && typeof attachment.sizes.thumbnail !== 'undefined' ) ? attachment.sizes.thumbnail.url : attachment.url;
 
           $preview.removeClass('hidden');
           $img.attr('src', thumbnail);
@@ -562,8 +562,25 @@
           });
         });
 
+          clone_group.find('textarea').each( function () {
+              this.id = this.name.replace(/[\[\]]/g,'');
+          });
+          clone_group.find('.wp-editor-container').each( function () {
+              var ta = $(this).find("textarea");
+              $(ta).addClass("wysiwyg").detach();
+              $(this).parents(".cs-fieldset").append($(ta));
+              $(this).parents(".wp-editor-wrap").remove();
+          });
+
         var cloned = clone_group.clone().removeClass('hidden');
         field_groups.append(cloned);
+
+          field_groups.find('textarea.wysiwyg').each( function () {
+              $(this).removeClass("wysiwyg");
+              var id = $(this).attr("id");
+              tinyMCE.settings = tinyMCEPreInit.mceInit.content;
+              $("#"+id).wp_editor();
+          });
 
         if ( accordion_group.length ) {
           field_groups.accordion('refresh');
@@ -653,6 +670,58 @@
         }
 
       });
+
+    });
+  };
+  // ======================================================
+
+  // ======================================================
+  // CSFRAMEWORK SAVE TAXONOMY CLEAR FORM ELEMENTS
+  // ------------------------------------------------------
+  $.fn.CSFRAMEWORK_TAXONOMY = function() {
+    return this.each( function() {
+
+      var $this   = $(this),
+          $parent = $this.parent();
+
+      // Only works in add-tag form
+      if( $parent.attr('id') === 'addtag' ) {
+
+        var $submit  = $parent.find('#submit'),
+            $name    = $parent.find('#tag-name'),
+            $wrap    = $parent.find('.cs-framework'),
+            $clone   = $wrap.find('.cs-element').clone(),
+            $list    = $('#the-list'),
+            flooding = false;
+
+        $submit.on( 'click', function() {
+
+          if( !flooding ) {
+
+            $list.on( 'DOMNodeInserted', function() {
+
+              if( flooding ) {
+
+                $wrap.empty();
+                $wrap.html( $clone );
+                $clone = $clone.clone();
+
+                $wrap.CSFRAMEWORK_RELOAD_PLUGINS();
+                $wrap.CSFRAMEWORK_DEPENDENCY();
+
+                flooding = false;
+
+              }
+
+            });
+
+          }
+
+          flooding = true;
+
+        });
+
+      }
 
     });
   };
@@ -750,7 +819,7 @@
 
                 e.preventDefault();
 
-                var icon = $(this).data('icon');
+                var icon = $(this).data('cs-icon');
 
                 $parent.find('i').removeAttr('class').addClass(icon);
                 $parent.find('input').val(icon).trigger('change');
@@ -769,7 +838,7 @@
 
                   var $ico = $(this);
 
-                  if ( $ico.data('icon').search( new RegExp( value, 'i' ) ) < 0 ) {
+                  if ( $ico.data('cs-icon').search( new RegExp( value, 'i' ) ) < 0 ) {
                     $ico.hide();
                   } else {
                     $ico.show();
@@ -944,8 +1013,6 @@
             // main-shortcode attributes
             $('[' + ruleAttr + ']', '.cs-dialog-load .cs-element:not(.hidden)').each( function() {
               var _this_main = $(this), _this_main_atts = _this_main.data('atts');
-
-              console.log(_this_main_atts);
               send_to_shortcode += base.validate_atts( _this_main_atts, _this_main );  // validate empty atts
             });
 
@@ -1270,7 +1337,7 @@
                 $container.on('click', '.wp-picker-clear', function() {
 
                   a8cIris._color._alpha = 1;
-                  $alpha_text.text('');
+                  $alpha_text.text('').trigger('change');
                   $alpha_slider.slider('option', 'value', 100).trigger('slide');
 
                 });
@@ -1366,58 +1433,6 @@
       $('.cs-help', this).CSFRAMEWORK_TOOLTIP();
     });
   };
-  // ======================================================
-
-  // ======================================================
-  // CSFRAMEWORK SAVE TAXONOMY CLEAR FORM ELEMENTS
-  // ------------------------------------------------------
-  $.fn.CSFRAMEWORK_TAXONOMY = function() {
-    return this.each( function() {
-
-      var $this   = $(this),
-          $parent = $this.parent();
-
-      // Only works in add-tag form
-      if( $parent.attr('id') === 'addtag' ) {
-
-        var $submit  = $parent.find('#submit'),
-            $name    = $parent.find('#tag-name'),
-            $wrap    = $parent.find('.cs-framework'),
-            $clone   = $wrap.find('.cs-element').clone(),
-            $list    = $('#the-list'),
-            flooding = false;
-
-        $submit.on( 'click', function() {
-
-          if( !flooding ) {
-
-            $list.on( 'DOMNodeInserted', function() {
-
-              if( flooding ) {
-
-                $wrap.empty();
-                $wrap.html( $clone );
-                $clone = $clone.clone();
-
-                $wrap.CSFRAMEWORK_RELOAD_PLUGINS();
-                $wrap.CSFRAMEWORK_DEPENDENCY();
-
-                flooding = false;
-
-              }
-
-            });
-
-          }
-
-          flooding = true;
-
-        });
-
-      }
-
-    });
-  };
 
   // ======================================================
   // JQUERY DOCUMENT READY
@@ -1428,11 +1443,11 @@
     $('.cs-content, .wp-customizer, .widget-content, .cs-taxonomy').CSFRAMEWORK_DEPENDENCY();
     $('.cs-field-group').CSFRAMEWORK_GROUP();
     $('.cs-save').CSFRAMEWORK_SAVE();
-    $cs_body.CSFRAMEWORK_RELOAD_PLUGINS();
+    $('.cs-taxonomy').CSFRAMEWORK_TAXONOMY();
+    $('.cs-framework, #widgets-right').CSFRAMEWORK_RELOAD_PLUGINS();
     $.CSFRAMEWORK.ICONS_MANAGER();
     $.CSFRAMEWORK.SHORTCODE_MANAGER();
     $.CSFRAMEWORK.WIDGET_RELOAD_PLUGINS();
-    $('.cs-taxonomy').CSFRAMEWORK_TAXONOMY();
   });
 
 })( jQuery, window, document );

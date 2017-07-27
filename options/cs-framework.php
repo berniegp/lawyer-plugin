@@ -3,6 +3,21 @@
  *
  * ------------------------------------------------------------------------------------------------
  *
+ * Codestar Framework
+ * A Lightweight and easy-to-use WordPress Options Framework
+ *
+ * Plugin Name: Codestar Framework
+ * Plugin URI: http://codestarframework.com/
+ * Author: Codestar
+ * Author URI: http://codestarlive.com/
+ * Version: 1.0.1
+ * Description: A Lightweight and easy-to-use WordPress Options Framework
+ * License: GPLv2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain: cs-framework
+ *
+ * ------------------------------------------------------------------------------------------------
+ *
  * Copyright 2015 Codestar <info@codestarlive.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -34,7 +49,7 @@ if( ! function_exists( 'cs_framework_init' ) && ! class_exists( 'CSFramework' ) 
     defined( 'CS_ACTIVE_FRAMEWORK' )  or  define( 'CS_ACTIVE_FRAMEWORK',  true );
     defined( 'CS_ACTIVE_METABOX'   )  or  define( 'CS_ACTIVE_METABOX',    true );
     defined( 'CS_ACTIVE_TAXONOMY'   ) or  define( 'CS_ACTIVE_TAXONOMY',   true );
-    defined( 'CS_ACTIVE_SHORTCODE' )  or  define( 'CS_ACTIVE_SHORTCODE',  false );
+    defined( 'CS_ACTIVE_SHORTCODE' )  or  define( 'CS_ACTIVE_SHORTCODE',  true );
     defined( 'CS_ACTIVE_CUSTOMIZE' )  or  define( 'CS_ACTIVE_CUSTOMIZE',  true );
 
     // helpers

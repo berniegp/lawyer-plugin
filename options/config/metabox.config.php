@@ -158,8 +158,8 @@ $options[]    = array(
 						),
 						array(
 							'id'    => 'content',
-							'type'  => 'textarea',
-							'title' => 'Content',
+							'type'  => 'wysiwyg',
+							'title' => 'Content'
 						),
 					),
 				),

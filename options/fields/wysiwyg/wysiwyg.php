@@ -28,7 +28,7 @@ class CSFramework_Option_Wysiwyg extends CSFramework_Options {
     $field_id    = ( ! empty( $this->field['id'] ) ) ? $this->field['id'] : '';
     $field_value = $this->element_value();
 
-    wp_editor( $field_value, $field_id . time(), $settings );
+    wp_editor( $field_value, $field_id, $settings );
 
     echo $this->element_after();
 
