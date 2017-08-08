@@ -50,7 +50,7 @@ vc_map(
 				'heading' 	  => 'Style',
 				'param_name'  => 'style',
 				'value' 	  => array(
-					'Style 1' => '',
+					'Style 1' => 'style1',
 					'Style 2' => 'tile-col--style-2',
 					'Style 3' => 'tile-practice-2-row',
 				),
@@ -104,7 +104,7 @@ class WPBakeryShortCode_lawyer_practice_areas extends WPBakeryShortCode
 			'limit'     	 => '',
 			'locations' 	 => 'all',
 			'excerpt_length' => '',
-			'style'     	 => '',
+			'style'     	 => 'style1',
 			'orderby'     	 => 'term_id',
 			'order'     	 => 'ASC',
 			'el_class'  	 => '',
@@ -166,7 +166,7 @@ class WPBakeryShortCode_lawyer_practice_areas extends WPBakeryShortCode
 
 		if ( ! empty( $terms ) ) {
 
-			if ( $style == '' ) { ?>
+			if ( $style == 'style1' ) { ?>
 
 				<div class="row">
 					<?php
