@@ -333,7 +333,7 @@ add_action( 'pre_get_posts', 'lawyer_search_lawyers' );
  * Make people search only by title field
  */
 if ( ! function_exists( 'lawyer_search_lawyer_by_title_only' ) ) {
-	function lawyer_search_lawyer_by_title_only( $search, &$wp_query ) {
+	function lawyer_search_lawyer_by_title_only( $search, $wp_query ) {
 		if ( ! empty( $_GET['post_type'] ) && $_GET['post_type'] == 'people' ) {
 
 			global $wpdb;
