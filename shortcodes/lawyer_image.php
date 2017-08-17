@@ -86,7 +86,7 @@ class WPBakeryShortCode_lawyer_image extends WPBakeryShortCode{
 			
 			if ( $action != 'no-link' && ! empty( $target_url ) ): ?><a href="<?php echo $target_url ?>" target="_<?php echo $link_target; ?>"><?php endif; ?>
 				<figure class="post__thumb effect-apollo <?php echo $class; ?>">
-					<img src="<?php echo esc_url( $img_url ); ?>" <?php echo $alt; ?>>
+					<img src="<?php echo esc_url( $img_url ); ?>" <?php echo $alt; ?> alt="">
 					<div class="effect-apollo__overlay"></div>
 				</figure>
 			<?php if ( $action != 'no-link' && ! empty( $target_url ) ): ?></a><?php endif; 
@@ -95,10 +95,3 @@ class WPBakeryShortCode_lawyer_image extends WPBakeryShortCode{
 		return ob_get_clean();
 	}
 }
-
-/*
-<figure class="effect-apollo">
-	<img src="images/service-item-thumb-1.jpg" alt="">
-	<div class="effect-apollo__overlay"></div>
-</figure>
-*/

@@ -142,7 +142,7 @@ class WPBakeryShortCode_recent_posts extends WPBakeryShortCode{
 							<li>
 								<?php if ( has_post_thumbnail() ): ?>
 									<a href="<?php the_permalink(); ?>" class="widget-latest-posts-thumb__thumb effect-apollo">
-										<?php the_post_thumbnail('shortcode-recent-posts'); ?>
+										<?php the_post_thumbnail('lawyer-shortcode-recent-posts'); ?>
 										<div class="effect-apollo__overlay"></div>
 									</a>
 								<?php endif ?>

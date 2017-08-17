@@ -68,7 +68,7 @@ if( ! class_exists( 'Lawyer_Recent_Posts' ) ) {
 					<li>
 						<?php if ( ! empty( $instance['thumbnail'] ) && $instance['thumbnail'] && has_post_thumbnail() ): ?>
 							<a href="<?php the_permalink(); ?>" class="widget-latest-posts-thumb__thumb effect-apollo">
-								<?php the_post_thumbnail('widget-blog'); ?>
+								<?php the_post_thumbnail('lawyer-shortcode-recent-posts'); ?>
 								<div class="effect-apollo__overlay"></div>
 							</a>
 						<?php endif ?>

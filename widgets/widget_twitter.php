@@ -52,7 +52,7 @@ if( ! class_exists( 'Lawyer_Twitter' ) ) {
 							$text = str_replace( $media[0]->url, '', $text );
 							$media_url = is_ssl() ? $media[0]->media_url_https : $media[0]->media_url;
 
-							$img = '<img src="' . $media_url . '">';
+							$img = '<img src="' . $media_url . '" alt="">';
 
 						}
 
