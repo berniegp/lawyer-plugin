@@ -40,7 +40,7 @@ function lawyer_update_settings() {
 	$theme-color-blue:					#1973dc;
 	$theme-color-dirty-orange:			#9a8474;
 
-	$main-theme-color:					$theme-color-red;
+	$main-theme-color:					' . lawyer_get_options( 'main_theme_color', '#b1001e' ) . ';
 
 	$body-bg-color:						' . $body_background_color . ';
 	$body-bg-image:           			' . $body_background_image . ';
@@ -89,6 +89,8 @@ function lawyer_update_settings() {
 
 	$h5-font-family:					"' . lawyer_get_font_family( 'h5_font_family', 'Slabo 27px' ) . '", serif;
 	$h5-txt-size:						' . lawyer_get_pixels_size( 'h5_font_size', '15px' ) . ';
+	$h5-txt-size-blog:				    ' . lawyer_get_pixels_size( 'h5_font_size', '18px' ) . ';
+	$h5-txt-color-blog:                 ' . lawyer_get_options( 'h5_color', '#000' ) . ';
 	$h5-txt-color-normal:				' . lawyer_get_options( 'h5_color', '#777' ) . ';
 	$h5-txt-color-link:					' . lawyer_get_options( 'h5_links_color', '#777' ) . ';
 	$h5-txt-color-link-hover:			' . lawyer_get_options( 'h5_links_hover_color', '#b1001e' ) . ';

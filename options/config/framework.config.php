@@ -29,6 +29,12 @@ $options[]      = array(
 	'icon'        => 'fa fa-cog',
 	'fields'      => array(
 		array(
+			'id'      	 => 'main_theme_color',
+			'type'    	 => 'color_picker',
+			'title'   	 => 'Main theme color',
+			'default' 	 => '#b1001e',
+		),
+		array(
 			'id'      => 'site_favicon',
 			'type'    => 'upload',
 			'title'   => 'Site favicon',
