@@ -457,7 +457,7 @@ $options[]      = array(
 				array(
 					'id'        => 'body_background_image',
 					'type'      => 'upload',
-					'title'     => 'Footer logo',
+					'title'     => 'Body background image',
 					'settings'      => array(
 						'upload_type'  => 'image',
 						'button_title' => 'Upload',

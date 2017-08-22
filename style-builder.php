@@ -30,9 +30,12 @@ function lawyer_update_settings() {
 		$body_background_color = lawyer_get_options( 'body_background_color' );
 	}
 
-	$body_background_image = '""';
+	$body_background_image = 'none';
 	if ( lawyer_get_options('body_background') == 'image' && lawyer_get_options( 'body_background_image' ) ) {
-		$body_background_image = lawyer_get_options( 'body_background_image' );
+		$body_background_image = lawyer_get_options( 'body_background_image', 'none' );
+		if ( $body_background_image ) {
+            $body_background_image = 'url(' . $body_background_image . ')';
+        }
 	}
 
 	$settings = '
