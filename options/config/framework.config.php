@@ -147,7 +147,7 @@ $options[]      = array(
 			'id'      	 => 'header_search',
 			'type'    	 => 'switcher',
 			'title'   	 => 'Search form in menu',
-			'default'	 => true
+			'default'	 => false
 		),
 		array(
 			'id'         => 'logo_type',
