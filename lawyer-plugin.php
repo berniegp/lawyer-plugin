@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Lawyer Theme Plugin
-Plugin URI: https://themeforest.net/user/
-Author: ...
-Author URI: https://themeforest.net/user/
+Plugin URI: https://themeforest.net/user/ThemeMakers
+Author: ThemeMakers
+Author URI: https://themeforest.net/user/ThemeMakers
 Version: 1.0.0
 Description: Includes Portfolio Custom Post Types and Visual Composer Shortcodes
 Text Domain: lawyer-plugin
@@ -14,6 +14,8 @@ defined( 'EF_ROOT' ) or define( 'EF_ROOT', dirname(__FILE__) );
 defined( 'EF_URI' )  or define( 'EF_URI',  plugin_dir_url( __FILE__ ) );
 defined( 'T_URI' )   or define( 'T_URI',   get_template_directory_uri() );
 defined( 'T_PATH' )  or define( 'T_PATH',  get_template_directory() );
+
+include_once ABSPATH . 'wp-includes/pluggable.php';
 
 // Custom post types Integration.
 require_once EF_ROOT . '/post-types/inc.php';
