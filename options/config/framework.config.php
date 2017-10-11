@@ -264,7 +264,7 @@ $options[]      = array(
 			'id'        => 'footer_author',
 			'type'      => 'wysiwyg',
 			'title'     => 'Author text',
-			'default'   => 'Developed by <a href="#">ThemeMakers</a>'
+			'default'   => 'Developed by <a href="https://webtemplatemasters.com/">ThemeMakers</a>'
 		),
 		array(
 			'id'      => 'footer_sidebar',
@@ -864,6 +864,25 @@ $options[]      = array(
 					'title'      => 'Heading text',
 					'default'	 => 'News',
 					'dependency' => array( 'blog_heading', '==', true )
+				),
+				array(
+					'id'         => 'blog_heading_bg',
+					'type'       => 'switcher',
+					'title'      => 'Enable heading background image',
+					'default'    => false
+				),
+				array(
+					'id'        => 'blog_heading_background_image',
+					'type'      => 'upload',
+					'title'     => 'Heading default background image',
+					'default'	=> T_URI . '/assets/images/banner-img--news.jpg',
+					'settings'      => array(
+						'upload_type'  => 'image',
+						'button_title' => 'Upload',
+						'frame_title'  => 'Select an image',
+						'insert_title' => 'Use this image',
+					),
+					'dependency' => array( 'blog_heading_bg', '==', true )
 				),
 				array(
 					'id'      	 => 'blog_breadcrumbs',
