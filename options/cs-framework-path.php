@@ -26,6 +26,7 @@ if( ! function_exists( 'cs_get_path_locate' ) ) {
     $plugin_dir     = wp_normalize_path( WP_PLUGIN_DIR );
     $located_plugin = ( preg_match( '#'. sanitize_file_name( $plugin_dir ) .'#', sanitize_file_name( $dirname ) ) ) ? true : false;
     $directory      = ( $located_plugin ) ? $plugin_dir : get_template_directory();
+    $directory      = str_replace( '//', '/', $directory );
     $directory_uri  = ( $located_plugin ) ? WP_PLUGIN_URL : get_template_directory_uri();
     $basename       = str_replace( wp_normalize_path( $directory ), '', $dirname );
     $dir            = $directory . $basename;
