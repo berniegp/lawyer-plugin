@@ -28,16 +28,3 @@ function vc_efa_chosen($settings, $value) {
     return $output;  
 }
 vc_add_shortcode_param('vc_efa_chosen', 'vc_efa_chosen');
-
-function lawyer_remove_elements( $e = array() ) {
-    if ( ! empty( $e ) ) {
-        foreach ( $e as $key => $remmove_this ) {
-            vc_remove_element( 'vc_' . $remmove_this );
-        }
-    }
-}
-add_action( 'admin_init', 'lawyer_remove_elements', 10);
-
-$s_elements = array( 'wp_text', 'tta_pageable', 'line_chart', 'round_chart', 'tta_accordion', 'tta_tour', 'cta', 'tabs', 'tta_tabs', 'tab', 'accordion', 'accordion_tab', 'custom_heading', 'clients', 'column_text', 'widget_sidebar', 'toggle', 'images_carousel', 'carousel', 'tour', 'gallery', 'posts_slider', 'posts_grid', 'teaser_grid', 'separator', 'text_separator', 'message', 'facebook', 'tweetmeme', 'googleplus', 'pinterest', 'button', 'toogle', 'button2', 'cta_button', 'cta_button2', 'video', 'gmaps', 'flickr', 'progress_bar', 'raw_html', 'raw_js', 'pie', 'wp_search', 'wp_meta', 'wp_recentcomments', 'wp_calendar', 'wp_pages', 'wp_custommenu', 'wp_posts', 'wp_links', 'wp_categories', 'wp_archives', 'wp_rss', 'basic_grid', 'media_grid', 'masonry_grid', 'masonry_media_grid', 'icon', 'wp_tagcloud' );
-vc_remove_element( 'client', 'testimonial' );
-lawyer_remove_elements( $s_elements );
