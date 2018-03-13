@@ -82,7 +82,7 @@ class WPBakeryShortCode_lawyer_image extends WPBakeryShortCode{
 
 			$alt = ! empty( $alt ) ? 'alt="' . $alt . '"' : '';
 
-			$target_url = ( $action != 'no-link' );
+//			$target_url = ( $action != 'no-link' );
 			
 			if ( $action != 'no-link' && ! empty( $target_url ) ): ?><a href="<?php echo $target_url ?>" target="_<?php echo $link_target; ?>"><?php endif; ?>
 				<figure class="post__thumb effect-apollo <?php echo $class; ?>">
