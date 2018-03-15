@@ -111,11 +111,11 @@ class WPBakeryShortCode_lawyer_people extends WPBakeryShortCode{
 										$location = get_post_meta( $people_id, 'people-location', true ); 
 										$city = get_post( $location );
 
-										$person__position = ! empty( $city ) ? $city->post_title : '';
+										$person__position = ! empty( $location ) ? $city->post_title : '';
 										if ( ! empty( $person__position ) ) {
 											$person__position .= ! empty( $meta_data['position'] ) ? ', ' . $meta_data['position'] : '';
 										} else {
-											$person__position .= ! empty( $meta_data['position'] ) ? $meta_data['position'] : '';
+											$person__position = ! empty( $meta_data['position'] ) ? $meta_data['position'] : '';
 										} ?>
 										<div class="small-12 medium-6 large-3 column">
 											<div class="team-person team-person--style-2">
@@ -161,11 +161,11 @@ class WPBakeryShortCode_lawyer_people extends WPBakeryShortCode{
 						$location = get_post_meta( $people_id, 'people-location', true ); 
 						$city = get_post( $location );
 
-						$person__position = ! empty( $city ) ? $city->post_title : '';
+						$person__position = ! empty( $location ) ? $city->post_title : '';
 						if ( ! empty( $person__position ) ) {
 							$person__position .= ! empty( $meta_data['position'] ) ? ', ' . $meta_data['position'] : '';
 						} else {
-							$person__position .= ! empty( $meta_data['position'] ) ? $meta_data['position'] : '';
+							$person__position = ! empty( $meta_data['position'] ) ? $meta_data['position'] : '';
 						} ?>
 						<div class="small-6 medium-4 large-2 column">
 							<div class="team-person">
@@ -198,11 +198,11 @@ class WPBakeryShortCode_lawyer_people extends WPBakeryShortCode{
 						$location = get_post_meta( $people_id, 'people-location', true ); 
 						$city = get_post( $location );
 
-						$person__position = ! empty( $city ) ? $city->post_title : '';
+						$person__position = ! empty( $location ) ? $city->post_title : '';
 						if ( ! empty( $person__position ) ) {
 							$person__position .= ! empty( $meta_data['position'] ) ? ', ' . $meta_data['position'] : '';
 						} else {
-							$person__position .= ! empty( $meta_data['position'] ) ? $meta_data['position'] : '';
+							$person__position = ! empty( $meta_data['position'] ) ? $meta_data['position'] : '';
 						} ?>
 						<div class="small-6 medium-3 column bg-1">
 							<div class="team-person">
