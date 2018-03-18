@@ -11,9 +11,9 @@ if( ! class_exists( 'Lawyer_Offices' ) ) {
 
 			$widget_ops     = array(
 				'classname'   => 'lawyer_offices',
-				'description' => esc_html__( 'Lawyer Theme Widget.', 'lawyer' )
+				'description' => esc_html__( 'Lawyer Theme Widget.', 'lawyer-plugin' )
 			);
-			parent::__construct( 'Lawyer_Offices', esc_html__( 'Lawyer - Offices', 'lawyer' ), $widget_ops );
+			parent::__construct( 'Lawyer_Offices', esc_html__( 'Lawyer - Offices', 'lawyer-plugin' ), $widget_ops );
 		}
 
 		function widget( $args, $instance ) {

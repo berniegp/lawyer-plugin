@@ -134,7 +134,7 @@ class WPBakeryShortCode_lawyer_people extends WPBakeryShortCode{
 													<?php if ( ! empty( $meta_data['email'])): ?>
 														<a href="<?php echo esc_url( $meta_data['email'], 'mailto' ) ?>" class="team-person__contact"><?php echo esc_html( $meta_data['email'] ); ?></a>
 													<?php endif ?>
-													<a href="<?php the_permalink(); ?>" class="team-person__link"><?php esc_html_e( 'View profile', 'lawyer' ); ?></a>
+													<a href="<?php the_permalink(); ?>" class="team-person__link"><?php esc_html_e( 'View profile', 'lawyer-plugin' ); ?></a>
 												</div>
 											</div>
 										</div>
@@ -177,7 +177,7 @@ class WPBakeryShortCode_lawyer_people extends WPBakeryShortCode{
 								<?php endif ?>
 								<?php the_title( '<h5 class="team-person__name">', '</h5>' ); ?>
 								<p class="team-person__position"><?php echo esc_html( $person__position ); ?></p>
-								<a href="<?php the_permalink(); ?>" class="team-person__link"><?php esc_html_e( 'View profile', 'lawyer' ); ?></a>
+								<a href="<?php the_permalink(); ?>" class="team-person__link"><?php esc_html_e( 'View profile', 'lawyer-plugin' ); ?></a>
 							</div>
 						</div>
 					<?php } ?>
@@ -214,7 +214,7 @@ class WPBakeryShortCode_lawyer_people extends WPBakeryShortCode{
 								<?php endif ?>
 								<?php the_title( '<h5 class="team-person__name">', '</h5>' ); ?>
 								<p class="team-person__position"><?php echo esc_html( $person__position ); ?></p>
-								<a href="<?php the_permalink(); ?>" class="team-person__link"><?php esc_html_e( 'View profile', 'lawyer' ); ?></a>
+								<a href="<?php the_permalink(); ?>" class="team-person__link"><?php esc_html_e( 'View profile', 'lawyer-plugin' ); ?></a>
 							</div>
 						</div>
 					<?php } ?>

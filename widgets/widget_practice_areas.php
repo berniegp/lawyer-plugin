@@ -11,9 +11,9 @@ if( ! class_exists( 'Lawyer_Practice_Areas' ) ) {
 
 			$widget_ops     = array(
 				'classname'   => 'lawyer_practice_areas',
-				'description' => esc_html__( 'Lawyer Theme Widget.', 'lawyer' )
+				'description' => esc_html__( 'Lawyer Theme Widget.', 'lawyer-plugin' )
 			);
-			parent::__construct( 'Lawyer_Practice_Areas', esc_html__( 'Lawyer - Practice areas', 'lawyer' ), $widget_ops );
+			parent::__construct( 'Lawyer_Practice_Areas', esc_html__( 'Lawyer - Practice areas', 'lawyer-plugin' ), $widget_ops );
 		}
 
 		function widget( $args, $instance ) {

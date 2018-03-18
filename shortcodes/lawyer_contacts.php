@@ -122,21 +122,21 @@ class WPBakeryShortCode_lawyer_contacts extends WPBakeryShortCode{
 				<?php endif; ?>
 				<div class="widget widget-address">
 					<?php if ( ! empty( $address ) ) : ?>
-						<p class="widget-address__text"><?php esc_html_e( 'Address:', 'lawyer' ); ?> <?php echo esc_html( $address ); ?>
+						<p class="widget-address__text"><?php esc_html_e( 'Address:', 'lawyer-plugin' ); ?> <?php echo esc_html( $address ); ?>
 							<br> <?php echo esc_html( $city ); ?> <?php echo esc_html( $code ); ?>, <?php echo esc_html( $country ); ?>
 						</p>
 					<?php endif; ?>
 
 					<?php if ( ! empty( $phone ) ) : ?>
-						<p class="widget-address__info icon-phone-3"><?php esc_html_e( 'Phone:', 'lawyer' ); ?> <?php echo esc_html( $phone ); ?></p>
+						<p class="widget-address__info icon-phone-3"><?php esc_html_e( 'Phone:', 'lawyer-plugin' ); ?> <?php echo esc_html( $phone ); ?></p>
 					<?php endif; ?>
 
 					<?php if ( ! empty( $fax ) ) : ?>
-						<p class="widget-address__info icon-fax"><?php esc_html_e( 'Fax:', 'lawyer' ); ?> <?php echo esc_html( $fax ); ?></p>
+						<p class="widget-address__info icon-fax"><?php esc_html_e( 'Fax:', 'lawyer-plugin' ); ?> <?php echo esc_html( $fax ); ?></p>
 					<?php endif; ?>
 
 					<?php if ( ! empty( $email ) ) : ?>
-						<p class="widget-address__info icon-mail-3"><?php esc_html_e( 'Email:', 'lawyer' ); ?> 
+						<p class="widget-address__info icon-mail-3"><?php esc_html_e( 'Email:', 'lawyer-plugin' ); ?>
 							<a class="widget-address__link" href="mailto:<?php echo esc_html( $email ); ?>"><?php echo esc_html( $email ); ?></a>
 						</p>
 					<?php endif; ?>

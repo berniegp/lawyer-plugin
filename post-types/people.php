@@ -7,8 +7,8 @@ if ( ! function_exists( 'lawyer_register_people_post_type' ) ) {
 		register_post_type( 'people',
 			array(
 				'labels' => array(
-					'name' => __( 'People', 'lawyer' ),
-					'singular_name' => __( 'People', 'lawyer' )
+					'name' => __( 'People', 'lawyer-plugin' ),
+					'singular_name' => __( 'People', 'lawyer-plugin' )
 				),
 				'menu_icon'   		 => 'dashicons-groups',
 				'public' 	  		 => true,
@@ -23,7 +23,7 @@ if ( ! function_exists( 'lawyer_register_people_post_type' ) ) {
 			'practice',
 			'people',
 			array(
-				'label' 	   => __( 'Practice areas' ),
+				'label' 	   => __( 'Practice areas', 'lawyer-plugin' ),
 				'rewrite' 	   => array( 
 					'slug' => 'practice' 
 				),
@@ -38,7 +38,7 @@ if ( ! function_exists( 'lawyer_register_people_post_type' ) ) {
 			'languages',
 			'people',
 			array(
-				'label' 	   => __( 'Languages' ),
+				'label' 	   => __( 'Languages', 'lawyer-plugin' ),
 				'rewrite' 	   => array( 
 					'slug' => 'languages' 
 				),
@@ -50,7 +50,7 @@ if ( ! function_exists( 'lawyer_register_people_post_type' ) ) {
 			'sectors',
 			'people',
 			array(
-				'label' 	   => __( 'Sectors' ),
+				'label' 	   => __( 'Sectors', 'lawyer-plugin' ),
 				'rewrite' 	   => array( 
 					'slug' => 'sectors' 
 				),

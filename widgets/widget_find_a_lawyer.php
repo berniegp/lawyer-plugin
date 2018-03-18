@@ -11,9 +11,9 @@ if( ! class_exists( 'Lawyer_Find_Lawyer' ) ) {
 
 			$widget_ops     = array(
 				'classname'   => 'lawyer_find_a_lawyer',
-				'description' => esc_html__( 'Lawyer Theme Widget.', 'lawyer' )
+				'description' => esc_html__( 'Lawyer Theme Widget.', 'lawyer-plugin' )
 			);
-			parent::__construct( 'Lawyer_Find_Lawyer', esc_html__( 'Lawyer - Find a lawyer', 'lawyer' ), $widget_ops );
+			parent::__construct( 'Lawyer_Find_Lawyer', esc_html__( 'Lawyer - Find a lawyer', 'lawyer-plugin' ), $widget_ops );
 		}
 
 		function widget( $args, $instance ) {
@@ -28,7 +28,7 @@ if( ! class_exists( 'Lawyer_Find_Lawyer' ) ) {
 
 			<form method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
 				<?php if ( isset( $instance['name'] ) && $instance['name'] ): ?>
-					<label><?php esc_html_e( 'Name', 'lawyer' ); ?></label>
+					<label><?php esc_html_e( 'Name', 'lawyer-plugin' ); ?></label>
 					<input type="text" name="s">
 				<?php endif ?>
 				
@@ -42,7 +42,7 @@ if( ! class_exists( 'Lawyer_Find_Lawyer' ) ) {
 						) 
 					); ?>
 					
-					<label><?php esc_html_e( 'Areas of Practice', 'lawyer' ); ?></label>
+					<label><?php esc_html_e( 'Areas of Practice', 'lawyer-plugin' ); ?></label>
 					<select name="legal">
 						<option disabled selected value="">&nbsp;</option>
 						<?php if ( ! empty( $practices ) ): ?>
@@ -57,7 +57,7 @@ if( ! class_exists( 'Lawyer_Find_Lawyer' ) ) {
 					$offices_args = array('post_type' => 'locations', 'posts_per_page' => -1 );
 					$offices = lawyer_param_values('posts', $offices_args, true, false); ?>
 
-					<label><?php esc_html_e( 'Offices', 'lawyer' ); ?></label>
+					<label><?php esc_html_e( 'Offices', 'lawyer-plugin' ); ?></label>
 					<select name="office">
 						<option disabled selected value="">&nbsp;</option>
 						<?php if ( ! empty( $offices ) ): ?>
@@ -68,7 +68,7 @@ if( ! class_exists( 'Lawyer_Find_Lawyer' ) ) {
 					</select>
 				<?php endif ?>
 				<input type="hidden" name="post_type" value="people">
-				<button class="btn btn--small search-form__submit" type="submit"><?php esc_html_e( 'Search', 'lawyer' ); ?></button>
+				<button class="btn btn--small search-form__submit" type="submit"><?php esc_html_e( 'Search', 'lawyer-plugin' ); ?></button>
 			</form>
 
 			<?php

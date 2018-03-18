@@ -69,7 +69,7 @@ class WPBakeryShortCode_lawyer_find_a_lawyer extends WPBakeryShortCode{
 			<?php } ?>
 			<form class="search-form" method="get" action="<?php echo home_url( '/' ); ?>">
 				<?php if ( $show_name ): ?>
-					<label><?php esc_html_e( 'Name', 'lawyer' ); ?></label>
+					<label><?php esc_html_e( 'Name', 'lawyer-plugin' ); ?></label>
 					<input type="text" name="s" value="">
 				<?php endif ?>
 
@@ -81,7 +81,7 @@ class WPBakeryShortCode_lawyer_find_a_lawyer extends WPBakeryShortCode{
 							) 
 					); ?>
 
-					<label><?php esc_html_e( 'Areas of Practice', 'lawyer' ); ?></label>
+					<label><?php esc_html_e( 'Areas of Practice', 'lawyer-plugin' ); ?></label>
 					<select name="legal">
 						<option disabled selected value="">&nbsp;</option>
 						<?php if ( ! empty( $practices ) ): ?>
@@ -96,7 +96,7 @@ class WPBakeryShortCode_lawyer_find_a_lawyer extends WPBakeryShortCode{
 					$offices_args = array('post_type' => 'locations', 'posts_per_page' => -1 );
 					$offices = lawyer_param_values('posts', $offices_args, true, false); ?>
 
-					<label><?php esc_html_e( 'Offices', 'lawyer' ); ?></label>
+					<label><?php esc_html_e( 'Offices', 'lawyer-plugin' ); ?></label>
 					<select name="office">
 						<option disabled selected value="">&nbsp;</option>
 						<?php if ( ! empty( $offices ) ): ?>
@@ -107,7 +107,7 @@ class WPBakeryShortCode_lawyer_find_a_lawyer extends WPBakeryShortCode{
 					</select>
 				<?php endif ?>
 				<input type="hidden" name="post_type" value="people">
-				<button class="btn btn--small search-form__submit" type="submit"><?php esc_html_e( 'Search', 'lawyer' ); ?></button>
+				<button class="btn btn--small search-form__submit" type="submit"><?php esc_html_e( 'Search', 'lawyer-plugin' ); ?></button>
 
 			</form>
 		</section>

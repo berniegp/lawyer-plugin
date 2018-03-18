@@ -158,7 +158,7 @@ class WPBakeryShortCode_lawyer_portfolio extends WPBakeryShortCode{
 				<?php if ( $filter == 'show' ): ?>
 					<!-- Gallery filter -->
 					<div class="filter-wrap align-center">
-						<button class="btn-filter active" data-filter="*"><?php esc_html_e( 'View all', 'lawyer' ); ?></button>
+						<button class="btn-filter active" data-filter="*"><?php esc_html_e( 'View all', 'lawyer-plugin' ); ?></button>
 						<?php foreach ( $categories as $category_slug ) { 
 							$category = get_term_by('slug', $category_slug, 'gallery-category'); ?>
 							<button class="btn-filter" data-filter=".isf-year-<?php echo esc_html( $category->slug ); ?>"><?php echo esc_html( $category->name ); ?></button>

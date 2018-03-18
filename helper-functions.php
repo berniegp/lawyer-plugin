@@ -37,7 +37,7 @@ if ( ! function_exists( 'lawyer_add_icons_font' ) ) {
 	 
 		$icons  = array_map(function($a) {  return array_keys($a)[0]; }, lawyer_fontello_icons());
 
-		echo '<h4 class="cs-icon-title">' . esc_html__( 'Fontello Icons', 'lawyer' ) . '</h4>';
+		echo '<h4 class="cs-icon-title">' . esc_html__( 'Fontello Icons', 'lawyer-plugin' ) . '</h4>';
 		foreach ( $icons as $icon ) {
 			echo '<a class="cs-icon-tooltip" data-icon="' . $icon . '" data-title="' . $icon . '"><span class="cs-icon cs-selector"><i class="' . $icon . '"></i></span></a>';
 		}
@@ -87,7 +87,7 @@ if( ! function_exists( 'lawyer_param_values' ) ) {
 					}
 
 				} else {
-					$list[ esc_html__( 'not found posts', 'lawyer' ) ] = '';
+					$list[ esc_html__( 'not found posts', 'lawyer-plugin' ) ] = '';
 				}
 
 				break;
@@ -102,7 +102,7 @@ if( ! function_exists( 'lawyer_param_values' ) ) {
 						$list[ $term->name ] = $term->slug;
 					}
 				} else {
-					$list[ esc_html__( 'not found terms or terms empty', 'lawyer' ) ] = '';
+					$list[ esc_html__( 'not found terms or terms empty', 'lawyer-plugin' ) ] = '';
 				}
 
 				break;
@@ -125,10 +125,10 @@ if( ! function_exists( 'lawyer_param_values' ) ) {
 							$list[ $category->name ] = $category->slug;
 						}
 					} else {
-						$list[ esc_html__( 'categories not is array', 'lawyer' ) ] = '';
+						$list[ esc_html__( 'categories not is array', 'lawyer-plugin' ) ] = '';
 					}
 				} else {
-					$list[ esc_html__( 'not found categories', 'lawyer' ) ] = '';
+					$list[ esc_html__( 'not found categories', 'lawyer-plugin' ) ] = '';
 				}
 				break;
 
@@ -446,3 +446,8 @@ if ( ! function_exists( 'lawyer_shortcode_pagination ' ) ) {
 
 	}
 }
+
+function lp_load_textdomain() {
+	load_plugin_textdomain( 'lawyer-plugin', false, EF_ROOT . '/languages' );
+}
+add_action('plugins_loaded', 'lp_load_textdomain');

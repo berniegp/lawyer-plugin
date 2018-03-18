@@ -58,7 +58,7 @@ if( ! class_exists( 'Lawyer_Twitter' ) ) {
 
 						if ( $time ) {
 							$timestamp = strtotime( $twitt->created_at );
-							$date = '<p class="widget-twitter__date">' . esc_html__( 'Posted on', 'lawyer' ) . ' ' . date( 'd M', $timestamp ) . '</p>';
+							$date = '<p class="widget-twitter__date">' . esc_html__( 'Posted on', 'lawyer-plugin' ) . ' ' . date( 'd M', $timestamp ) . '</p>';
 						}
 
 						if ( $links ) {

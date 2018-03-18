@@ -171,9 +171,9 @@ if( ! class_exists( 'Lawyer_Testimonials' ) ) {
 				'type'  => 'select',
 				'title' => 'Show testimonials',
 				'options'  => array(
-					'predefined' => esc_html__( 'Predefined', 'lawyer' ),
-					'random' 	 => esc_html__( 'Random', 'lawyer' ),
-					'latest' 	 => esc_html__( 'Latest', 'lawyer' ),
+					'predefined' => esc_html__( 'Predefined', 'lawyer-plugin' ),
+					'random' 	 => esc_html__( 'Random', 'lawyer-plugin' ),
+					'latest' 	 => esc_html__( 'Latest', 'lawyer-plugin' ),
 				),
 			);
 
@@ -204,7 +204,7 @@ if( ! class_exists( 'Lawyer_Testimonials' ) ) {
 				'type'  	 => 'select',
 				'title' 	 => 'Number of items',
 				'options'  => array(
-					'all' 	 => esc_html__( 'All items', 'lawyer' ),
+					'all' 	 => esc_html__( 'All items', 'lawyer-plugin' ),
 					'1' => 1,
 					'2' => 2,
 					'3' => 3,
@@ -264,8 +264,8 @@ if( ! class_exists( 'Lawyer_Testimonials' ) ) {
 				'type'  => 'select',
 				'title' => 'Animation effect',
 				'options' => array(
-					'fade'  => esc_html__( 'Fade', 'lawyer' ),
-					'slide' => esc_html__( 'Slide', 'lawyer' ),
+					'fade'  => esc_html__( 'Fade', 'lawyer-plugin' ),
+					'slide' => esc_html__( 'Slide', 'lawyer-plugin' ),
 				)
 			);
 

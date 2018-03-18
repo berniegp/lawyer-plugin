@@ -7,8 +7,8 @@ if ( ! function_exists( 'lawyer_register_testimonials_post_type' ) ) {
 		register_post_type( 'testimonials',
 			array(
 				'labels' => array(
-					'name' => __( 'Testimonials', 'lawyer' ),
-					'singular_name' => __( 'Testimonial', 'lawyer' )
+					'name' => __( 'Testimonials', 'lawyer-plugin' ),
+					'singular_name' => __( 'Testimonial', 'lawyer-plugin' )
 				),
 				'menu_icon'   		 => 'dashicons-format-chat',
 				'public' 	  		 => true,
@@ -24,7 +24,7 @@ if ( ! function_exists( 'lawyer_register_testimonials_post_type' ) ) {
 			'testimonials-category',
 			'testimonials',
 			array(
-				'label' 	   => __( 'Categories' ),
+				'label' 	   => __( 'Categories', 'lawyer-plugin' ),
 				'rewrite' 	   => array( 
 					'slug' => 'testimonials-category' 
 				),
