@@ -94,6 +94,11 @@ vc_map(
 			),
 			array(
 				'type'        => 'checkbox',
+				'heading'     => __( 'Enable custom marker', 'js_composer' ),
+				'param_name'  => 'enable_c_marker',
+			),
+			array(
+				'type'        => 'checkbox',
 				'heading'     => __( 'Enable marker with popup', 'js_composer' ),
 				'param_name'  => 'enable_popup',
 			),
@@ -136,6 +141,7 @@ class WPBakeryShortCode_lawyer_google_maps extends WPBakeryShortCode{
 			'map_type'          => 'roadmap',
 			'enable_scroll'     => '',
 			'draggable'         => '',
+			'enable_c_marker'   => '',
 			'enable_popup'      => '',
 			'html_content'      => '',
 			'el_class'          => '',
@@ -145,6 +151,7 @@ class WPBakeryShortCode_lawyer_google_maps extends WPBakeryShortCode{
 		$class  = ( ! empty( $el_class ) ) ? $el_class : '';
 		$class .= vc_shortcode_custom_css_class( $css, ' ' );
 
+		$enable_c_marker = $enable_c_marker == true ? LAWYER_URI . '/assets/images/bullet.png' : '';
 		$enable_popup = $enable_popup == true ? 'show' : 'hide';
 		$enable_scroll = $enable_scroll == true ? 'show' : 'hide';
 		$draggable = $draggable == true ? 'show' : 'hide';
@@ -173,7 +180,8 @@ class WPBakeryShortCode_lawyer_google_maps extends WPBakeryShortCode{
 				 data-enable_scroll="<?php echo esc_attr( $enable_scroll ); ?>"
 				 data-content="<?php echo esc_attr( $html_content ); ?>"
 				 data-popup="<?php echo esc_attr( $enable_popup ); ?>"
-				 data-draggable="<?php echo esc_attr( $draggable ); ?>">
+				 data-draggable="<?php echo esc_attr( $draggable ); ?>"
+				 data-bullet="<?php echo esc_attr( $enable_c_marker ); ?>">
 			</div>
 
 		<?php
