@@ -62,7 +62,7 @@ class WPBakeryShortCode_lawyer_social extends WPBakeryShortCode{
 			$icon_html = '<i class="' . $class . '"></i>';
 
 			if ( ! empty( $url ) ) {
-				$icon_html = '<a href="' . esc_url( $url ) . '">' . $icon_html . '';
+				$icon_html = '<a href="' . esc_url( $url ) . '">' . $icon_html . '</a>';
 			}
 
 			ob_start();

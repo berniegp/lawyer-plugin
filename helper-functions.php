@@ -451,3 +451,24 @@ function lp_load_textdomain() {
 	load_plugin_textdomain( 'lawyer-plugin', false, EF_ROOT . '/languages' );
 }
 add_action('plugins_loaded', 'lp_load_textdomain');
+
+if ( ! function_exists( 'lawyer_get_categories' ) ) {
+	function lawyer_get_categories( $post_type ) {
+		$cats = array(
+			'post' => 'category',
+		);
+
+		$categories = get_terms( $cats[ $post_type ] );
+		$list       = array();
+
+		if ( ! empty( $categories ) ) {
+			$list[ esc_html__( 'All', 'lawyer' ) ] = 'all';
+
+			foreach ( $categories as $category ) {
+				$list[ $category->name ] = $category->slug;
+			}
+		}
+
+		return $list;
+	}
+}
