@@ -3,74 +3,99 @@
 
 vc_map(
 	array(
-		'name'        => __( 'Recent posts', 'js_composer' ),
+		'name'        => esc_html__( 'Recent posts', 'js_composer' ),
 		'base'        => 'recent_posts',
 		'params'      => array(
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Title', 'js_composer' ),
+				'heading'     => esc_html__( 'Title', 'js_composer' ),
 				'param_name'  => 'title',
 				'admin_label' => true,
 			),
 			array(
 				'type'        => 'vc_efa_chosen',
-				'heading'     => __( 'Posts category', 'js_composer' ),
+				'heading'     => esc_html__( 'Posts category', 'js_composer' ),
 				'param_name'  => 'category',
 				'placeholder' => 'Choose category (optional)',
 				'value'       => lawyer_get_categories( 'post' ),
 				'std'         => '',
-				'description' => __( 'You can choose specific categories for blog, default is all categories', 'js_composer' ),
+				'description' => esc_html__( 'You can choose specific categories for blog, default is all categories', 'js_composer' ),
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Specified posts', 'js_composer' ),
+				'heading'     => esc_html__( 'Specified posts', 'js_composer' ),
 				'param_name'  => 'specified_posts',
 				'description' => 'Post IDs, comma separated.'
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Posts number', 'js_composer' ),
+				'heading'     => esc_html__( 'Posts number', 'js_composer' ),
 				'param_name'  => 'posts_number'
 			),
 			array(
+				'type'        => 'dropdown',
+				'heading'     => esc_html__( 'Order By', 'js_composer' ),
+				'param_name'  => 'order_by',
+				'value' 	  => array(
+					'ID' 		    => 'ID',
+					'Author' 	    => 'author',
+					'Post Title'    => 'title',
+					'Name' 		    => 'name',
+					'Date' 		    => 'date',
+					'Last Modified' => 'modified',
+					'Random Order'  => 'rand',
+					'Comment Count' => 'comment_count',
+					'Menu Order'    => 'menu_order'
+				)
+			),
+			array(
+				'type'        => 'dropdown',
+				'heading'     => esc_html__( 'Order Type', 'js_composer' ),
+				'param_name'  => 'order',
+				'value' 	  => array(
+					esc_html__( 'Ascending', 'js_composer' )  => 'ASC',
+					esc_html__( 'Descending', 'js_composer' ) => 'DESC'
+				)
+			),
+			array(
 				'type'        => 'checkbox',
-				'heading'     => __( 'Hide dividers between posts', 'js_composer' ),
+				'heading'     => esc_html__( 'Hide dividers between posts', 'js_composer' ),
 				'param_name'  => 'hide_dividers'
 			),
 			array(
 				'type'        => 'checkbox',
-				'heading'     => __( 'Show thumbnail', 'js_composer' ),
+				'heading'     => esc_html__( 'Show thumbnail', 'js_composer' ),
 				'param_name'  => 'show_thumbnail'
 			),
 			array(
 				'type'        => 'checkbox',
-				'heading'     => __( 'Hide post date', 'js_composer' ),
+				'heading'     => esc_html__( 'Hide post date', 'js_composer' ),
 				'param_name'  => 'show_post_date'
 			),
 			array(
 				'type'        => 'checkbox',
-				'heading'     => __( 'Excerpt post title', 'js_composer' ),
+				'heading'     => esc_html__( 'Excerpt post title', 'js_composer' ),
 				'param_name'  => 'post_title'
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Title excerpt symbol count', 'js_composer' ),
+				'heading'     => esc_html__( 'Title excerpt symbol count', 'js_composer' ),
 				'param_name'  => 'symbol_count',
 				'dependency'  => array( 'element' => 'post_title', 'value' => 'true' )
 			),	
 			array(
 				'type' 		  => 'textfield',
-				'heading' 	  => __( 'Extra class name', 'js_composer' ),
+				'heading' 	  => esc_html__( 'Extra class name', 'js_composer' ),
 				'param_name'  => 'el_class',
-				'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
+				'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
 				'value' 	  => ''
 			),
 			/* CSS editor */
 			array(
 				'type' 		  => 'css_editor',
-				'heading' 	  => __( 'CSS box', 'js_composer' ),
+				'heading' 	  => esc_html__( 'CSS box', 'js_composer' ),
 				'param_name'  => 'css',
-				'group' 	  => __( 'Design options', 'js_composer' )
+				'group' 	  => esc_html__( 'Design options', 'js_composer' )
 			)
 
 		)
@@ -85,6 +110,8 @@ class WPBakeryShortCode_recent_posts extends WPBakeryShortCode{
 			'category'         => 'all',
 			'specified_posts'  => '',
 			'posts_number'     => '',
+			'order_by'         => 'ID',
+			'order'            => 'ASC',
 			'hide_dividers'    => '',
 			'show_thumbnail'   => '',
 			'show_post_date'   => '',
@@ -115,8 +142,8 @@ class WPBakeryShortCode_recent_posts extends WPBakeryShortCode{
 			'post_type'      	  => 'post',
 			'posts_per_page' 	  => $posts_number,
 			'ignore_sticky_posts' => true,
-			'orderby'             => 'ID',
-			'order'               => 'ASC',
+			'orderby'             => $order_by,
+			'order'               => $order,
 			'tax_query'      	  => array(
 				$cat_args
 			)
