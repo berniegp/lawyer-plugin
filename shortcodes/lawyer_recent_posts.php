@@ -138,8 +138,14 @@ class WPBakeryShortCode_recent_posts extends WPBakeryShortCode{
 		}
 
 		$posts_number = ! empty( $posts_number ) ? $posts_number : 3;
+
+		if ( ! empty( $specified_posts ) ) {
+			$specified_posts = explode(',', $specified_posts);
+		}
+
 		$args = array(
 			'post_type'      	  => 'post',
+			'post__in'            => $specified_posts,
 			'posts_per_page' 	  => $posts_number,
 			'ignore_sticky_posts' => true,
 			'orderby'             => $order_by,
@@ -148,9 +154,6 @@ class WPBakeryShortCode_recent_posts extends WPBakeryShortCode{
 				$cat_args
 			)
 		);
-		if ( ! empty( $specified_posts ) ) {
-			$args['post__in'] = explode(',', $specified_posts);
-		}
 		
 		$artcl = new WP_Query( $args );
 
