@@ -3,22 +3,22 @@
 
 vc_map(
 	array(
-		'name'        => __( 'Google maps', 'js_composer' ),
+		'name'        => esc_html__( 'Google maps', 'js_composer' ),
 		'base'        => 'lawyer_google_maps',
 		'params'      => array(
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Width', 'js_composer' ),
+				'heading'     => esc_html__( 'Width', 'js_composer' ),
 				'param_name'  => 'width'
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Height', 'js_composer' ),
+				'heading'     => esc_html__( 'Height', 'js_composer' ),
 				'param_name'  => 'height'
 			),
 			array(
 				'type'        => 'dropdown',
-				'heading'     => __( 'Location Mode', 'js_composer' ),
+				'heading'     => esc_html__( 'Location Mode', 'js_composer' ),
 				'param_name'  => 'location_mode',
 				'value' 	  =>  array(
 					'Address' 	  => 'address',
@@ -27,19 +27,19 @@ vc_map(
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Marker Latitude', 'js_composer' ),
+				'heading'     => esc_html__( 'Marker Latitude', 'js_composer' ),
 				'param_name'  => 'marker_latitude',
 				'dependency'  => array( 'element' => 'location_mode', 'value' => 'coordinates' )
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Marker Longtitude', 'js_composer' ),
+				'heading'     => esc_html__( 'Marker Longtitude', 'js_composer' ),
 				'param_name'  => 'marker_longtitude',
 				'dependency'  => array( 'element' => 'location_mode', 'value' => 'coordinates' )
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Address', 'js_composer' ),
+				'heading'     => esc_html__( 'Address', 'js_composer' ),
 				'param_name'  => 'address',
 				'dependency'  => array( 'element' => 'location_mode', 'value' => 'address' )
 			),
@@ -84,43 +84,43 @@ vc_map(
 			),
 			array(
 				'type'        => 'checkbox',
-				'heading'     => __( 'Enable scrollwheel', 'js_composer' ),
+				'heading'     => esc_html__( 'Enable scrollwheel', 'js_composer' ),
 				'param_name'  => 'enable_scroll'
 			),
 			array(
 				'type'        => 'checkbox',
-				'heading'     => __( 'Marker is draggable', 'js_composer' ),
+				'heading'     => esc_html__( 'Marker is draggable', 'js_composer' ),
 				'param_name'  => 'draggable'
 			),
 			array(
 				'type'        => 'checkbox',
-				'heading'     => __( 'Enable custom marker', 'js_composer' ),
+				'heading'     => esc_html__( 'Enable custom marker', 'js_composer' ),
 				'param_name'  => 'enable_c_marker',
 			),
 			array(
 				'type'        => 'checkbox',
-				'heading'     => __( 'Enable marker with popup', 'js_composer' ),
+				'heading'     => esc_html__( 'Enable marker with popup', 'js_composer' ),
 				'param_name'  => 'enable_popup',
 			),
 			array(
 				'type' 		  => 'textarea',
-				'heading' 	  => __( 'HTML content', 'js_composer' ),
+				'heading' 	  => esc_html__( 'HTML content', 'js_composer' ),
 				'param_name'  => 'html_content',
 				'dependency'  => array( 'element' => 'enable_popup', 'value' => 'true' )
 			),
 			array(
 				'type' 		  => 'textfield',
-				'heading' 	  => __( 'Extra class name', 'js_composer' ),
+				'heading' 	  => esc_html__( 'Extra class name', 'js_composer' ),
 				'param_name'  => 'el_class',
-				'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
+				'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
 				'value' 	  => ''
 			),
 			/* CSS editor */
 			array(
 				'type' 		  => 'css_editor',
-				'heading' 	  => __( 'CSS box', 'js_composer' ),
+				'heading' 	  => esc_html__( 'CSS box', 'js_composer' ),
 				'param_name'  => 'css',
-				'group' 	  => __( 'Design options', 'js_composer' )
+				'group' 	  => esc_html__( 'Design options', 'js_composer' )
 			)
 
 		)

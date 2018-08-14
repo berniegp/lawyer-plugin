@@ -22,8 +22,10 @@ if( ! class_exists( 'Lawyer_Offices' ) ) {
 
 			echo $before_widget;
 
+			$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance );
+
 			if ( ! empty( $instance['title'] ) ) {
-				echo $before_title . $instance['title'] . $after_title;
+				echo $before_title . $title . $after_title;
 			}
 
 			$args = array(
@@ -70,7 +72,7 @@ if( ! class_exists( 'Lawyer_Offices' ) ) {
 			// set defaults
 			// -------------------------------------------------
 			$instance   = wp_parse_args( $instance, array(
-				'title'   => 'Offices',
+				'title'   => esc_html__( 'Offices', 'lawyer-plugin' ),
 				'exclude' => ''
 			));
 
@@ -82,7 +84,7 @@ if( ! class_exists( 'Lawyer_Offices' ) ) {
 				'id'    => $this->get_field_name('title'),
 				'name'  => $this->get_field_name('title'),
 				'type'  => 'text',
-				'title' => 'Title',
+				'title' => esc_html__( 'Title', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $text_field, $text_value );
@@ -95,11 +97,11 @@ if( ! class_exists( 'Lawyer_Offices' ) ) {
 				'id'    => $this->get_field_name('exclude'),
 				'name'  => $this->get_field_name('exclude'),
 				'type'  => 'text',
-				'title' => 'Exclude',
+				'title' => esc_html__( 'Exclude', 'lawyer-plugin' ),
 				'attributes' => array(
 					'placeholder' => 'e.g.: 1, 2, 3',
 				),
-				'desc'  => 'Comma separated. Office ids will be excluded from a list on frontend',
+				'desc'  => esc_html__( 'Comma separated. Office ids will be excluded from a list on frontend', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $text_field, $text_value );

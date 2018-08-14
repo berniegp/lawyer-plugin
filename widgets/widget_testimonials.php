@@ -11,7 +11,7 @@ if( ! class_exists( 'Lawyer_Testimonials' ) ) {
 
 			$widget_ops     = array(
 				'classname'   => 'lawyer_testimonials',
-				'description' => 'Lawyer Theme Widget.'
+				'description' => esc_html__( 'Lawyer Theme Widget.', 'lawyer-plugin' )
 			);
 			parent::__construct( 'Lawyer_Testimonials', 'Lawyer - Testimonials', $widget_ops );
 		}
@@ -22,20 +22,13 @@ if( ! class_exists( 'Lawyer_Testimonials' ) ) {
 
 			echo $before_widget;
 
+			$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance );
+
 			if ( ! empty( $instance['title'] ) ) {
-				echo $before_title . $instance['title'] . $after_title;
+				echo $before_title . $title . $after_title;
 			}
+
 			// ---------------------------------------------------------------------------------
-			// ---------------------------------------------------------------------------------
-			/*	'type' 			 => 'latest',
-				- 'predefined' 	 => '',
-				- 'number' 		 => 3,
-				'show_title' 	 => true,
-				- 'show_position'  => true,
-				- 'show_thumbnail' => true,
-				- 'animation' 	 => 'fade',
-				- 'time_speed' 	 => 5000,
-				- 'slide_speed' 	 => 300,*/
 
 			$type  			= isset( $instance['type'] ) ? $instance['type'] : 'latest';
 			$limit 			= isset( $instance['number'] ) ? $instance['number'] : 3;
@@ -136,7 +129,7 @@ if( ! class_exists( 'Lawyer_Testimonials' ) ) {
 			// set defaults
 			// -------------------------------------------------
 			$instance   = wp_parse_args( $instance, array(
-				'title'   		 => 'Testimonials',
+				'title'   		 => esc_html__( 'Testimonials', 'lawyer-plugin' ),
 				'type' 			 => 'latest',
 				'predefined' 	 => '',
 				'number' 		 => 3,
@@ -156,7 +149,7 @@ if( ! class_exists( 'Lawyer_Testimonials' ) ) {
 				'id'    => $this->get_field_name('title'),
 				'name'  => $this->get_field_name('title'),
 				'type'  => 'text',
-				'title' => 'Title',
+				'title' => esc_html__( 'Title', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $text_field, $text_value );
@@ -169,7 +162,7 @@ if( ! class_exists( 'Lawyer_Testimonials' ) ) {
 				'id'    => $this->get_field_name('type'),
 				'name'  => $this->get_field_name('type'),
 				'type'  => 'select',
-				'title' => 'Show testimonials',
+				'title' => esc_html__( 'Show testimonials', 'lawyer-plugin' ),
 				'options'  => array(
 					'predefined' => esc_html__( 'Predefined', 'lawyer-plugin' ),
 					'random' 	 => esc_html__( 'Random', 'lawyer-plugin' ),
@@ -187,8 +180,8 @@ if( ! class_exists( 'Lawyer_Testimonials' ) ) {
 				'id'    	 => $this->get_field_name('predefined'),
 				'name'  	 => $this->get_field_name('predefined'),
 				'type'  	 => 'text',
-				'title' 	 => 'Predefined',
-				'info'  	 => 'Specifies items ids to be shown',
+				'title' 	 => esc_html__( 'Predefined', 'lawyer-plugin' ),
+				'info'  	 => esc_html__( 'Specifies items ids to be shown', 'lawyer-plugin' ),
 				'dependency' => array( $this->get_field_name('type'), '==', 'predefined' )
 			);
 
@@ -202,7 +195,7 @@ if( ! class_exists( 'Lawyer_Testimonials' ) ) {
 				'id'    	 => $this->get_field_name('number'),
 				'name'  	 => $this->get_field_name('number'),
 				'type'  	 => 'select',
-				'title' 	 => 'Number of items',
+				'title' 	 => esc_html__( 'Number of items', 'lawyer-plugin' ),
 				'options'  => array(
 					'all' 	 => esc_html__( 'All items', 'lawyer-plugin' ),
 					'1' => 1,
@@ -223,7 +216,7 @@ if( ! class_exists( 'Lawyer_Testimonials' ) ) {
 				'id'    => $this->get_field_name('show_title'),
 				'name'  => $this->get_field_name('show_title'),
 				'type'  => 'switcher',
-				'title' => 'Show Name/Company'
+				'title' => esc_html__( 'Show Name/Company', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $switcher_field, $switcher_value );
@@ -236,7 +229,7 @@ if( ! class_exists( 'Lawyer_Testimonials' ) ) {
 				'id'    => $this->get_field_name('show_position'),
 				'name'  => $this->get_field_name('show_position'),
 				'type'  => 'switcher',
-				'title' => 'Show Position'
+				'title' => esc_html__( 'Show Position', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $switcher_field, $switcher_value );
@@ -249,7 +242,7 @@ if( ! class_exists( 'Lawyer_Testimonials' ) ) {
 				'id'    => $this->get_field_name('show_thumbnail'),
 				'name'  => $this->get_field_name('show_thumbnail'),
 				'type'  => 'switcher',
-				'title' => 'Show Thumbnail'
+				'title' => esc_html__( 'Show Thumbnail', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $switcher_field, $switcher_value );
@@ -262,7 +255,7 @@ if( ! class_exists( 'Lawyer_Testimonials' ) ) {
 				'id'    => $this->get_field_name('animation'),
 				'name'  => $this->get_field_name('animation'),
 				'type'  => 'select',
-				'title' => 'Animation effect',
+				'title' => esc_html__( 'Animation effect', 'lawyer-plugin' ),
 				'options' => array(
 					'fade'  => esc_html__( 'Fade', 'lawyer-plugin' ),
 					'slide' => esc_html__( 'Slide', 'lawyer-plugin' ),
@@ -279,7 +272,7 @@ if( ! class_exists( 'Lawyer_Testimonials' ) ) {
 				'id'    => $this->get_field_name('time_speed'),
 				'name'  => $this->get_field_name('time_speed'),
 				'type'  => 'text',
-				'title' => 'Timeout speed'
+				'title' => esc_html__( 'Timeout speed', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $switcher_field, $switcher_value );
@@ -292,7 +285,7 @@ if( ! class_exists( 'Lawyer_Testimonials' ) ) {
 				'id'    => $this->get_field_name('slide_speed'),
 				'name'  => $this->get_field_name('slide_speed'),
 				'type'  => 'text',
-				'title' => 'Slide speed'
+				'title' => esc_html__( 'Slide speed', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $switcher_field, $switcher_value );

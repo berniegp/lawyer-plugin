@@ -172,12 +172,12 @@ class CSFramework extends CSFramework_Abstract {
       if( is_array( $decode_string ) ) {
         return $decode_string;
       }
-      $add_errors[] = $this->add_settings_error( __( 'Success. Imported backup options.', 'cs-framework' ), 'updated' );
+      $add_errors[] = $this->add_settings_error( esc_html__( 'Success. Imported backup options.', 'cs-framework' ), 'updated' );
     }
 
     // reset all options
     if ( isset( $request['resetall'] ) ) {
-      $add_errors[] = $this->add_settings_error( __( 'Default options restored.', 'cs-framework' ), 'updated' );
+      $add_errors[] = $this->add_settings_error( esc_html__( 'Default options restored.', 'cs-framework' ), 'updated' );
       return;
     }
 
@@ -196,7 +196,7 @@ class CSFramework extends CSFramework_Abstract {
           }
         }
       }
-      $add_errors[] = $this->add_settings_error( __( 'Default options restored for only this section.', 'cs-framework' ), 'updated' );
+      $add_errors[] = $this->add_settings_error( esc_html__( 'Default options restored for only this section.', 'cs-framework' ), 'updated' );
     }
 
     // option sanitize and validate
@@ -362,17 +362,17 @@ class CSFramework extends CSFramework_Abstract {
       echo '<h1>'. $this->settings['framework_title'] .'</h1>';
       echo '<fieldset>';
 
-      echo ( $this->settings['ajax_save'] ) ? '<span id="cs-save-ajax">'. __( 'Settings saved.', 'cs-framework' ) .'</span>' : '';
+      echo ( $this->settings['ajax_save'] ) ? '<span id="cs-save-ajax">'. esc_html__( 'Settings saved.', 'cs-framework' ) .'</span>' : '';
 
-      submit_button( __( 'Save', 'cs-framework' ), 'primary cs-save', 'save', false, array( 'data-save' => __( 'Saving...', 'cs-framework' ) ) );
-      submit_button( __( 'Restore', 'cs-framework' ), 'secondary cs-restore cs-reset-confirm', $this->unique .'[reset]', false );
+      submit_button( esc_html__( 'Save', 'cs-framework' ), 'primary cs-save', 'save', false, array( 'data-save' => esc_html__( 'Saving...', 'cs-framework' ) ) );
+      submit_button( esc_html__( 'Restore', 'cs-framework' ), 'secondary cs-restore cs-reset-confirm', $this->unique .'[reset]', false );
 
       if( $this->settings['show_reset_all'] ) {
-        submit_button( __( 'Reset All Options', 'cs-framework' ), 'secondary cs-restore cs-warning-primary cs-reset-confirm', $this->unique .'[resetall]', false );
+        submit_button( esc_html__( 'Reset All Options', 'cs-framework' ), 'secondary cs-restore cs-warning-primary cs-reset-confirm', $this->unique .'[resetall]', false );
       }
 
       echo '</fieldset>';
-      echo ( empty( $has_nav ) ) ? '<a href="#" class="cs-expand-all"><i class="fa fa-eye-slash"></i> '. __( 'show all options', 'cs-framework' ) .'</a>' : '';
+      echo ( empty( $has_nav ) ) ? '<a href="#" class="cs-expand-all"><i class="fa fa-eye-slash"></i> '. esc_html__( 'show all options', 'cs-framework' ) .'</a>' : '';
       echo '<div class="clear"></div>';
       echo '</header>'; // end .cs-header
 

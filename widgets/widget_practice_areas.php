@@ -22,8 +22,10 @@ if( ! class_exists( 'Lawyer_Practice_Areas' ) ) {
 
 			echo $before_widget;
 
+			$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance );
+
 			if ( ! empty( $instance['title'] ) ) {
-				echo $before_title . $instance['title'] . $after_title;
+				echo $before_title . $title . $after_title;
 			}
 
 			if ( isset( $instance['locations'] ) ) {
@@ -74,7 +76,7 @@ if( ! class_exists( 'Lawyer_Practice_Areas' ) ) {
 			// set defaults
 			// -------------------------------------------------
 			$instance   = wp_parse_args( $instance, array(
-				'title'     => 'Practice areas',
+				'title'     => esc_html__( 'Practice areas', 'lawyer-plugin' ),
 				'locations' => 'all',
 			));
 
@@ -85,7 +87,7 @@ if( ! class_exists( 'Lawyer_Practice_Areas' ) ) {
 				'id'    => $this->get_field_name('title'),
 				'name'  => $this->get_field_name('title'),
 				'type'  => 'text',
-				'title' => 'Title',
+				'title' => esc_html__( 'Title', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $text_field, $text_value );
@@ -98,7 +100,7 @@ if( ! class_exists( 'Lawyer_Practice_Areas' ) ) {
 				'id'      => $this->get_field_name('locations'),
 				'name'    => $this->get_field_name('locations'),
 				'type'    => 'select',
-				'title'   => 'Locations',
+				'title'   => esc_html__( 'Locations', 'lawyer-plugin' ),
 				'options' => lawyer_param_values( 'posts', $args, true, true )
 			);
 

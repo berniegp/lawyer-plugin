@@ -22,8 +22,10 @@ if( ! class_exists( 'Lawyer_Find_Lawyer' ) ) {
 
 			echo $before_widget;
 
+			$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance );
+
 			if ( ! empty( $instance['title'] ) ) {
-				echo $before_title . $instance['title'] . $after_title;
+				echo $before_title . $title . $after_title;
 			} ?>
 
 			<form method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
@@ -98,7 +100,7 @@ if( ! class_exists( 'Lawyer_Find_Lawyer' ) ) {
 			// set defaults
 			// -------------------------------------------------
 			$instance   = wp_parse_args( $instance, array(
-				'title'   => 'Find a lawyer',
+				'title'   => esc_html__( 'Find a lawyer', 'lawyer-plugin' ),
 				'name'    => true,
 				'areas'   => true,
 				'offices' => true
@@ -111,7 +113,7 @@ if( ! class_exists( 'Lawyer_Find_Lawyer' ) ) {
 				'id'    => $this->get_field_name('title'),
 				'name'  => $this->get_field_name('title'),
 				'type'  => 'text',
-				'title' => 'Title',
+				'title' => esc_html__( 'Title', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $text_field, $text_value );
@@ -124,7 +126,7 @@ if( ! class_exists( 'Lawyer_Find_Lawyer' ) ) {
 				'id'    => $this->get_field_name('name'),
 				'name'  => $this->get_field_name('name'),
 				'type'  => 'switcher',
-				'title' => 'Show name'
+				'title' => esc_html__( 'Show name', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $switcher_field, $switcher_value );
@@ -137,7 +139,7 @@ if( ! class_exists( 'Lawyer_Find_Lawyer' ) ) {
 				'id'    => $this->get_field_name('areas'),
 				'name'  => $this->get_field_name('areas'),
 				'type'  => 'switcher',
-				'title' => 'Show areas'
+				'title' => esc_html__( 'Show areas', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $switcher_field, $switcher_value );
@@ -150,7 +152,7 @@ if( ! class_exists( 'Lawyer_Find_Lawyer' ) ) {
 				'id'    => $this->get_field_name('offices'),
 				'name'  => $this->get_field_name('offices'),
 				'type'  => 'switcher',
-				'title' => 'Show offices'
+				'title' => esc_html__( 'Show offices', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $switcher_field, $switcher_value );

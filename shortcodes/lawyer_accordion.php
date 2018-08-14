@@ -3,7 +3,7 @@
 
 vc_map(
 	array(
-		'name'        => __( 'Toggle/Accordion', 'js_composer' ),
+		'name'        => esc_html__( 'Toggle/Accordion', 'js_composer' ),
 		'base'        => 'lawyer_accordion',
 		'params'      => array(
 			array(
@@ -19,19 +19,19 @@ vc_map(
 
 			array(
 				'type'       => 'param_group',
-				'heading'    => __( 'Items', 'js_composer' ),
+				'heading'    => esc_html__( 'Items', 'js_composer' ),
 				'param_name' => 'items',
 				'params'     => array(
 					array(
 						'type' 		  => 'textfield',
-						'heading' 	  => __( 'Item title', 'js_composer' ),
+						'heading' 	  => esc_html__( 'Item title', 'js_composer' ),
 						'param_name'  => 'title',
 						'value' 	  => '',
 						'admin_label' => true,
 					),
 					array(
 						'type' 		  => 'textarea',
-						'heading' 	  => __( 'Item Content', 'js_composer' ),
+						'heading' 	  => esc_html__( 'Item Content', 'js_composer' ),
 						'param_name'  => 'text'
 					)
 				),
@@ -42,18 +42,18 @@ vc_map(
 
 			array(
 				'type' 		  => 'textfield',
-				'heading' 	  => __( 'Extra class name', 'js_composer' ),
+				'heading' 	  => esc_html__( 'Extra class name', 'js_composer' ),
 				'param_name'  => 'el_class',
-				'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
+				'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
 				'value' 	  => '',
 				'admin_label' => true,
 			),
 			/* CSS editor */
 			array(
 				'type' 		  => 'css_editor',
-				'heading' 	  => __( 'CSS box', 'js_composer' ),
+				'heading' 	  => esc_html__( 'CSS box', 'js_composer' ),
 				'param_name'  => 'css',
-				'group' 	  => __( 'Design options', 'js_composer' )
+				'group' 	  => esc_html__( 'Design options', 'js_composer' )
 			)
 		)
 	)

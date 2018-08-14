@@ -5,7 +5,7 @@
 
 vc_map(
 	array(
-		'name'        => __( 'Icon and Text', 'js_composer' ),
+		'name'        => esc_html__( 'Icon and Text', 'js_composer' ),
 		'base'        => 'lawyer_icon_text',
 		'params'      => array(
 			array(
@@ -21,24 +21,24 @@ vc_map(
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Title', 'js_composer' ),
+				'heading'     => esc_html__( 'Title', 'js_composer' ),
 				'param_name'  => 'title',
                 'admin_label' => true,
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Subtitle', 'js_composer' ),
+				'heading'     => esc_html__( 'Subtitle', 'js_composer' ),
 				'param_name'  => 'subtitle',
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Link URL', 'js_composer' ),
+				'heading'     => esc_html__( 'Link URL', 'js_composer' ),
 				'param_name'  => 'url',
 				'dependency'  => array( 'element' => 'style', 'value' => 'style1' )
 			),
 			array(
 				'type'        => 'iconpicker',
-				'heading'     => __( 'Icon', 'js_composer' ),
+				'heading'     => esc_html__( 'Icon', 'js_composer' ),
 				'param_name'  => 'icon',
 				'value'       => 'icon-adjustments',
 				'settings'       => array(
@@ -48,22 +48,22 @@ vc_map(
 					'iconsPerPage' => 4000,
 				),
 				// 'dependency'  => array( 'element' => 'icon_type', 'value' => 'ticon' ),
-				'description' => __( 'Select icon from library.', 'js_composer' ),
+				'description' => esc_html__( 'Select icon from library.', 'js_composer' ),
 			),
 
 			array(
 				'type' 		  => 'textfield',
-				'heading' 	  => __( 'Extra class name', 'js_composer' ),
+				'heading' 	  => esc_html__( 'Extra class name', 'js_composer' ),
 				'param_name'  => 'el_class',
-				'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
+				'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
 				'value' 	  => ''
 			),
 			/* CSS editor */
 			array(
 				'type' 		  => 'css_editor',
-				'heading' 	  => __( 'CSS box', 'js_composer' ),
+				'heading' 	  => esc_html__( 'CSS box', 'js_composer' ),
 				'param_name'  => 'css',
-				'group' 	  => __( 'Design options', 'js_composer' )
+				'group' 	  => esc_html__( 'Design options', 'js_composer' )
 			)
 		)
 	)

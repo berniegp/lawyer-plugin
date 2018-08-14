@@ -11,7 +11,7 @@ if( ! class_exists( 'Lawyer_Twitter' ) ) {
 
 			$widget_ops     = array(
 				'classname'   => 'lawyer_twitter',
-				'description' => 'Lawyer Theme Widget.'
+				'description' => esc_html__( 'Lawyer Theme Widget.', 'lawyer-plugin' )
 			);
 			parent::__construct( 'Lawyer_Twitter', 'Lawyer - Twitter', $widget_ops );
 		}
@@ -22,8 +22,10 @@ if( ! class_exists( 'Lawyer_Twitter' ) ) {
 
 			echo $before_widget;
 
+			$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance );
+
 			if ( ! empty( $instance['title'] ) ) {
-				echo $before_title . $instance['title'] . $after_title;
+				echo $before_title . $title . $after_title;
 			}
 
 
@@ -100,7 +102,7 @@ if( ! class_exists( 'Lawyer_Twitter' ) ) {
 			// set defaults
 			// -------------------------------------------------
 			$instance   = wp_parse_args( $instance, array(
-				'title'    => 'Twitter',
+				'title'    => esc_html__( 'Twitter', 'lawyer-plugin' ),
 				'username' => '',
 				'twitts'   => 2,
 				'icon' 	   => true,
@@ -117,7 +119,7 @@ if( ! class_exists( 'Lawyer_Twitter' ) ) {
 				'id'    => $this->get_field_name('title'),
 				'name'  => $this->get_field_name('title'),
 				'type'  => 'text',
-				'title' => 'Title',
+				'title' => esc_html__( 'Title', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $text_field, $text_value );
@@ -130,7 +132,7 @@ if( ! class_exists( 'Lawyer_Twitter' ) ) {
 				'id'    => $this->get_field_name('twitts'),
 				'name'  => $this->get_field_name('twitts'),
 				'type'  => 'number',
-				'title' => 'Count of tweets'
+				'title' => esc_html__( 'Count of tweets', 'lawyer-plugin' )
 			);
 	
 
@@ -141,7 +143,7 @@ if( ! class_exists( 'Lawyer_Twitter' ) ) {
 				'id'    => $this->get_field_name('username'),
 				'name'  => $this->get_field_name('username'),
 				'type'  => 'text',
-				'title' => 'Username'
+				'title' => esc_html__( 'Username', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $textarea_field, $textarea_value );
@@ -154,7 +156,7 @@ if( ! class_exists( 'Lawyer_Twitter' ) ) {
 				'id'    => $this->get_field_name('icon'),
 				'name'  => $this->get_field_name('icon'),
 				'type'  => 'switcher',
-				'title' => 'Show icons'
+				'title' => esc_html__( 'Show icons', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $switcher_field, $switcher_value );
@@ -166,7 +168,7 @@ if( ! class_exists( 'Lawyer_Twitter' ) ) {
 				'id'    => $this->get_field_name('links'),
 				'name'  => $this->get_field_name('links'),
 				'type'  => 'switcher',
-				'title' => 'Enable links'
+				'title' => esc_html__( 'Enable links', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $switcher_field, $switcher_value );
@@ -179,7 +181,7 @@ if( ! class_exists( 'Lawyer_Twitter' ) ) {
 				'id'    => $this->get_field_name('images'),
 				'name'  => $this->get_field_name('images'),
 				'type'  => 'switcher',
-				'title' => 'Enable images'
+				'title' => esc_html__( 'Enable images', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $switcher_field, $switcher_value );
@@ -192,7 +194,7 @@ if( ! class_exists( 'Lawyer_Twitter' ) ) {
 				'id'    => $this->get_field_name('user'),
 				'name'  => $this->get_field_name('user'),
 				'type'  => 'switcher',
-				'title' => 'Show user'
+				'title' => esc_html__( 'Show user', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $switcher_field, $switcher_value );
@@ -205,7 +207,7 @@ if( ! class_exists( 'Lawyer_Twitter' ) ) {
 				'id'    => $this->get_field_name('time'),
 				'name'  => $this->get_field_name('time'),
 				'type'  => 'switcher',
-				'title' => 'Show time'
+				'title' => esc_html__( 'Show time', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $switcher_field, $switcher_value );

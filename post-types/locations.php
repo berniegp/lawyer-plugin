@@ -7,8 +7,8 @@ if ( ! function_exists( 'lawyer_register_locations_post_type' ) ) {
 		register_post_type( 'locations',
 			array(
 				'labels' => array(
-					'name' => __( 'Locations', 'lawyer-plugin' ),
-					'singular_name' => __( 'Location', 'lawyer-plugin' )
+					'name' => esc_html__( 'Locations', 'lawyer-plugin' ),
+					'singular_name' => esc_html__( 'Location', 'lawyer-plugin' )
 				),
 				'menu_icon'   		 => 'dashicons-location-alt',
 				'public' 	  		 => true,
@@ -24,7 +24,7 @@ if ( ! function_exists( 'lawyer_register_locations_post_type' ) ) {
 			'locations-category',
 			'locations',
 			array(
-				'label' 	   => __( 'Categories', 'lawyer-plugin' ),
+				'label' 	   => esc_html__( 'Categories', 'lawyer-plugin' ),
 				'rewrite' 	   => array( 
 					'slug' => 'locations-category' 
 				),

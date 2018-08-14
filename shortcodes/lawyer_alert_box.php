@@ -3,7 +3,7 @@
 
 vc_map(
 	array(
-		'name'        => __( 'Alert box', 'js_composer' ),
+		'name'        => esc_html__( 'Alert box', 'js_composer' ),
 		'base'        => 'lawyer_alert_box',
 		'params'      => array(
 			array(
@@ -21,23 +21,23 @@ vc_map(
 			),
 			array(
 				'type' 		  => 'textfield',
-				'heading' 	  => __( 'Title', 'js_composer' ),
+				'heading' 	  => esc_html__( 'Title', 'js_composer' ),
 				'param_name'  => 'title',
 				'admin_label' => true
 			),
 			array(
 				'type' 		  => 'textfield',
-				'heading' 	  => __( 'Extra class name', 'js_composer' ),
+				'heading' 	  => esc_html__( 'Extra class name', 'js_composer' ),
 				'param_name'  => 'el_class',
-				'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
+				'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
 				'value' 	  => ''
 			),
 			/* CSS editor */
 			array(
 				'type' 		  => 'css_editor',
-				'heading' 	  => __( 'CSS box', 'js_composer' ),
+				'heading' 	  => esc_html__( 'CSS box', 'js_composer' ),
 				'param_name'  => 'css',
-				'group' 	  => __( 'Design options', 'js_composer' )
+				'group' 	  => esc_html__( 'Design options', 'js_composer' )
 			)
 		)
 	)

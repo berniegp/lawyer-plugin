@@ -22,8 +22,10 @@ if( ! class_exists( 'Lawyer_Contacts' ) ) {
 
 			echo $before_widget;
 
+			$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance );
+
 			if ( ! empty( $instance['title'] ) ) {
-				echo $before_title . $instance['title'] . $after_title;
+				echo $before_title . $title . $after_title;
 			}
 
 			if ( isset( $instance['labels'] ) && $instance['labels'] ) {
@@ -82,7 +84,7 @@ if( ! class_exists( 'Lawyer_Contacts' ) ) {
 			// set defaults
 			// -------------------------------------------------
 			$instance   = wp_parse_args( $instance, array(
-				'title'   => 'Contacts',
+				'title'   => esc_html__( 'Contacts', 'lawyer-plugin' ),
 				'сname'    => '',
 				'address' => '',
 				'city'    => '',
@@ -102,7 +104,7 @@ if( ! class_exists( 'Lawyer_Contacts' ) ) {
 				'id'    => $this->get_field_name('title'),
 				'name'  => $this->get_field_name('title'),
 				'type'  => 'text',
-				'title' => 'Title',
+				'title' => esc_html__( 'Title', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $text_field, $text_value );
@@ -114,7 +116,7 @@ if( ! class_exists( 'Lawyer_Contacts' ) ) {
 				'id'    => $this->get_field_name('сname'),
 				'name'  => $this->get_field_name('сname'),
 				'type'  => 'text',
-				'title' => 'Organization name',
+				'title' => esc_html__( 'Organization name', 'lawyer-plugin' )
 			);	
 			echo cs_add_element( $text_field, $text_value );
 					
@@ -125,7 +127,7 @@ if( ! class_exists( 'Lawyer_Contacts' ) ) {
 				'id'    => $this->get_field_name('address'),
 				'name'  => $this->get_field_name('address'),
 				'type'  => 'text',
-				'title' => 'Address',
+				'title' => esc_html__( 'Address', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $text_field, $text_value );
@@ -137,7 +139,7 @@ if( ! class_exists( 'Lawyer_Contacts' ) ) {
 				'id'    => $this->get_field_name('city'),
 				'name'  => $this->get_field_name('city'),
 				'type'  => 'text',
-				'title' => 'Сity',
+				'title' => esc_html__( 'Сity', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $text_field, $text_value );
@@ -149,7 +151,7 @@ if( ! class_exists( 'Lawyer_Contacts' ) ) {
 				'id'    => $this->get_field_name('region'),
 				'name'  => $this->get_field_name('region'),
 				'type'  => 'text',
-				'title' => 'Region',
+				'title' => esc_html__( 'Region', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $text_field, $text_value );
@@ -161,7 +163,7 @@ if( ! class_exists( 'Lawyer_Contacts' ) ) {
 				'id'    => $this->get_field_name('zip'),
 				'name'  => $this->get_field_name('zip'),
 				'type'  => 'text',
-				'title' => 'Postal Code',
+				'title' => esc_html__( 'Postal Code', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $text_field, $text_value );
@@ -173,7 +175,7 @@ if( ! class_exists( 'Lawyer_Contacts' ) ) {
 				'id'    => $this->get_field_name('country'),
 				'name'  => $this->get_field_name('country'),
 				'type'  => 'text',
-				'title' => 'Сountry',
+				'title' => esc_html__( 'Сountry', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $text_field, $text_value );
@@ -185,7 +187,7 @@ if( ! class_exists( 'Lawyer_Contacts' ) ) {
 				'id'    => $this->get_field_name('phone'),
 				'name'  => $this->get_field_name('phone'),
 				'type'  => 'text',
-				'title' => 'Phone',
+				'title' => esc_html__( 'Phone', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $text_field, $text_value );
@@ -197,7 +199,7 @@ if( ! class_exists( 'Lawyer_Contacts' ) ) {
 				'id'    => $this->get_field_name('fax'),
 				'name'  => $this->get_field_name('fax'),
 				'type'  => 'text',
-				'title' => 'Fax',
+				'title' => esc_html__( 'Fax', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $text_field, $text_value );
@@ -209,7 +211,7 @@ if( ! class_exists( 'Lawyer_Contacts' ) ) {
 				'id'    => $this->get_field_name('email'),
 				'name'  => $this->get_field_name('email'),
 				'type'  => 'text',
-				'title' => 'Email',
+				'title' => esc_html__( 'Email', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $text_field, $text_value );
@@ -221,7 +223,7 @@ if( ! class_exists( 'Lawyer_Contacts' ) ) {
 				'id'    => $this->get_field_name('labels'),
 				'name'  => $this->get_field_name('labels'),
 				'type'  => 'switcher',
-				'title' => 'Show labels'
+				'title' => esc_html__( 'Show labels', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $switcher_field, $switcher_value );

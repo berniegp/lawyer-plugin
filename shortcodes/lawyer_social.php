@@ -3,12 +3,12 @@
 
 vc_map(
 	array(
-		'name'        => __( 'Social icon', 'js_composer' ),
+		'name'        => esc_html__( 'Social icon', 'js_composer' ),
 		'base'        => 'lawyer_social',
 		'params'      => array(
 			array(
 				'type'        => 'iconpicker',
-				'heading'     => __( 'Icon', 'js_composer' ),
+				'heading'     => esc_html__( 'Icon', 'js_composer' ),
 				'param_name'  => 'icon',
 				'value'       => 'icon-adjustments',
 				'settings'       => array(
@@ -17,26 +17,26 @@ vc_map(
 					'source'       => lawyer_fontello_icons( true ),
 					'iconsPerPage' => 4000,
 				),
-				'description' => __( 'Select icon from library.', 'js_composer' ),
+				'description' => esc_html__( 'Select icon from library.', 'js_composer' ),
 			),
 			array(
 				'type' 		  => 'textfield',
-				'heading' 	  => __( 'Icon link', 'js_composer' ),
+				'heading' 	  => esc_html__( 'Icon link', 'js_composer' ),
 				'param_name'  => 'url',
 			),
 			array(
 				'type' 		  => 'textfield',
-				'heading' 	  => __( 'Extra class name', 'js_composer' ),
+				'heading' 	  => esc_html__( 'Extra class name', 'js_composer' ),
 				'param_name'  => 'el_class',
-				'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
+				'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
 				'value' 	  => ''
 			),
 			/* CSS editor */
 			array(
 				'type' 		  => 'css_editor',
-				'heading' 	  => __( 'CSS box', 'js_composer' ),
+				'heading' 	  => esc_html__( 'CSS box', 'js_composer' ),
 				'param_name'  => 'css',
-				'group' 	  => __( 'Design options', 'js_composer' )
+				'group' 	  => esc_html__( 'Design options', 'js_composer' )
 			)
 		)
 	)

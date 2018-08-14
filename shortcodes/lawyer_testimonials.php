@@ -3,7 +3,7 @@
 $args = array( 'post_type' => 'testimonials', 'numberposts' => -1 );
 vc_map(
 	array(
-		'name'        => __( 'Testimonials', 'js_composer' ),
+		'name'        => esc_html__( 'Testimonials', 'js_composer' ),
 		'base'        => 'lawyer_testimonials',
 		'params'      => array(
 			array(
@@ -36,7 +36,7 @@ vc_map(
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Type testimonials ids', 'js_composer' ),
+				'heading'     => esc_html__( 'Type testimonials ids', 'js_composer' ),
 				'param_name'  => 'predefined',
 				'dependency'  => array( 'element' => 'testimonials', 'value' => array( 'predefined' ) ),
 				'description' => 'Testimonials post ids, comma separated(ex. 12, 23, 152).'
@@ -57,13 +57,13 @@ vc_map(
 			),
 			array(
 				'type'        => 'checkbox',
-				'heading'     => __( 'Show Position', 'js_composer' ),
+				'heading'     => esc_html__( 'Show Position', 'js_composer' ),
 				'param_name'  => 'show_position',
 				'dependency'  => array( 'element' => 'style', 'value' => array( 'style-1', 'style-2' ) )
 			),
 			array(
 				'type'        => 'checkbox',
-				'heading'     => __( 'Show Thumbnail', 'js_composer' ),
+				'heading'     => esc_html__( 'Show Thumbnail', 'js_composer' ),
 				'param_name'  => 'thumbnail',
 				'dependency'  => array( 'element' => 'style', 'value' => array( 'style-1', 'style-2' ) )
 			),
@@ -79,31 +79,31 @@ vc_map(
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Timeout speed', 'js_composer' ),
+				'heading'     => esc_html__( 'Timeout speed', 'js_composer' ),
 				'param_name'  => 'timeout_speed',
 				'value' 	  => '5000',
 				'dependency'  => array( 'element' => 'testimonials', 'value' => array( 'random', 'latest', 'predefined' ) )
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Slide speed', 'js_composer' ),
+				'heading'     => esc_html__( 'Slide speed', 'js_composer' ),
 				'param_name'  => 'slide_speed',
 				'value' 	  => '300',
 				'dependency'  => array( 'element' => 'testimonials', 'value' => array( 'random', 'latest', 'predefined' ) )
 			),
 			array(
 				'type' 		  => 'textfield',
-				'heading' 	  => __( 'Extra class name', 'js_composer' ),
+				'heading' 	  => esc_html__( 'Extra class name', 'js_composer' ),
 				'param_name'  => 'el_class',
-				'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
+				'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
 				'value' 	  => ''
 			),
 			/* CSS editor */
 			array(
 				'type' 		  => 'css_editor',
-				'heading' 	  => __( 'CSS box', 'js_composer' ),
+				'heading' 	  => esc_html__( 'CSS box', 'js_composer' ),
 				'param_name'  => 'css',
-				'group' 	  => __( 'Design options', 'js_composer' )
+				'group' 	  => esc_html__( 'Design options', 'js_composer' )
 			)
 		)
 	)

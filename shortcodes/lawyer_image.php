@@ -3,12 +3,12 @@
 
 vc_map(
 	array(
-		'name'        => __( 'Image', 'js_composer' ),
+		'name'        => esc_html__( 'Image', 'js_composer' ),
 		'base'        => 'lawyer_image',
 		'params'      => array(
 			array(
 				'type'        => 'attach_image',
-				'heading'     => __( 'Image URL', 'js_composer' ),
+				'heading'     => esc_html__( 'Image URL', 'js_composer' ),
 				'param_name'  => 'image'
 			),
 			array(
@@ -22,7 +22,7 @@ vc_map(
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Target url', 'js_composer' ),
+				'heading'     => esc_html__( 'Target url', 'js_composer' ),
 				'param_name'  => 'target_url',
 				'dependency'  => array( 'element' => 'action', 'value' => 'link' )
 			),
@@ -38,22 +38,22 @@ vc_map(
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Image Alt', 'js_composer' ),
+				'heading'     => esc_html__( 'Image Alt', 'js_composer' ),
 				'param_name'  => 'alt'
 			),
 			array(
 				'type' 		  => 'textfield',
-				'heading' 	  => __( 'Extra class name', 'js_composer' ),
+				'heading' 	  => esc_html__( 'Extra class name', 'js_composer' ),
 				'param_name'  => 'el_class',
-				'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
+				'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
 				'value' 	  => ''
 			),
 			/* CSS editor */
 			array(
 				'type' 		  => 'css_editor',
-				'heading' 	  => __( 'CSS box', 'js_composer' ),
+				'heading' 	  => esc_html__( 'CSS box', 'js_composer' ),
 				'param_name'  => 'css',
-				'group' 	  => __( 'Design options', 'js_composer' )
+				'group' 	  => esc_html__( 'Design options', 'js_composer' )
 			)
 		)
 	)

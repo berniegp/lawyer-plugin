@@ -11,7 +11,7 @@ if( ! class_exists( 'Lawyer_Subscriptions' ) ) {
 
 			$widget_ops     = array(
 				'classname'   => 'widget-subscribe',
-				'description' => 'Lawyer Theme Widget.'
+				'description' => esc_html__( 'Lawyer Theme Widget.', 'lawyer-plugin' )
 			);
 			parent::__construct( 'Lawyer_Subscriptions', 'Lawyer - Subscriptions', $widget_ops );
 		}
@@ -22,8 +22,10 @@ if( ! class_exists( 'Lawyer_Subscriptions' ) ) {
 
 			echo $before_widget;
 
+			$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance );
+
 			if ( ! empty( $instance['title'] ) ) {
-				echo $before_title . $instance['title'] . $after_title;
+				echo $before_title . $title . $after_title;
 			}
 
 			if ( ! empty( $instance['description'] ) ) {
@@ -54,7 +56,7 @@ if( ! class_exists( 'Lawyer_Subscriptions' ) ) {
 			// set defaults
 			// -------------------------------------------------
 			$instance   = wp_parse_args( $instance, array(
-				'title'   	  => 'Subscriptions',
+				'title'   	  => esc_html__( 'Subscriptions', 'lawyer-plugin' ),
 				'description' => '',
 				'form'    	  => '',
 			));
@@ -66,7 +68,7 @@ if( ! class_exists( 'Lawyer_Subscriptions' ) ) {
 				'id'    => $this->get_field_name('title'),
 				'name'  => $this->get_field_name('title'),
 				'type'  => 'text',
-				'title' => 'Title',
+				'title' => esc_html__( 'Title', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $text_field, $text_value );
@@ -79,7 +81,7 @@ if( ! class_exists( 'Lawyer_Subscriptions' ) ) {
 				'id'    => $this->get_field_name('description'),
 				'name'  => $this->get_field_name('description'),
 				'type'  => 'textarea',
-				'title' => 'Description'
+				'title' => esc_html__( 'Description', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $upload_field, $upload_value );
@@ -92,7 +94,7 @@ if( ! class_exists( 'Lawyer_Subscriptions' ) ) {
 				'id'      => $this->get_field_name('form'),
 				'name'    => $this->get_field_name('form'),
 				'type'    => 'select',
-				'title'   => 'Select mailchimp form',
+				'title'   => esc_html__( 'Select mailchimp form', 'lawyer-plugin' ),
 				'options' => lawyer_param_values('posts', $args, true)
 			);
 

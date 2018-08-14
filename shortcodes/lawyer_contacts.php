@@ -3,68 +3,68 @@
 
 vc_map(
 	array(
-		'name'        => __( 'Contacts', 'js_composer' ),
+		'name'        => esc_html__( 'Contacts', 'js_composer' ),
 		'base'        => 'lawyer_contacts',
 		'params'      => array(
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Address', 'js_composer' ),
+				'heading'     => esc_html__( 'Address', 'js_composer' ),
 				'param_name'  => 'address'
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'City', 'js_composer' ),
+				'heading'     => esc_html__( 'City', 'js_composer' ),
 				'param_name'  => 'city'
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Region', 'js_composer' ),
+				'heading'     => esc_html__( 'Region', 'js_composer' ),
 				'param_name'  => 'region'
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Postal Code', 'js_composer' ),
+				'heading'     => esc_html__( 'Postal Code', 'js_composer' ),
 				'param_name'  => 'code'
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Country', 'js_composer' ),
+				'heading'     => esc_html__( 'Country', 'js_composer' ),
 				'param_name'  => 'country'
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Phone', 'js_composer' ),
+				'heading'     => esc_html__( 'Phone', 'js_composer' ),
 				'param_name'  => 'phone'
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Fax', 'js_composer' ),
+				'heading'     => esc_html__( 'Fax', 'js_composer' ),
 				'param_name'  => 'fax'
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Email', 'js_composer' ),
+				'heading'     => esc_html__( 'Email', 'js_composer' ),
 				'param_name'  => 'email'
 			),
 			array(
 				'type'        => 'checkbox',
-				'heading'     => __( 'Show labels', 'js_composer' ),
+				'heading'     => esc_html__( 'Show labels', 'js_composer' ),
 				'param_name'  => 'labels'
 			),
 
 			array(
 				'type' 		  => 'textfield',
-				'heading' 	  => __( 'Extra class name', 'js_composer' ),
+				'heading' 	  => esc_html__( 'Extra class name', 'js_composer' ),
 				'param_name'  => 'el_class',
-				'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
+				'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
 				'value' 	  => ''
 			),
 			/* CSS editor */
 			array(
 				'type' 		  => 'css_editor',
-				'heading' 	  => __( 'CSS box', 'js_composer' ),
+				'heading' 	  => esc_html__( 'CSS box', 'js_composer' ),
 				'param_name'  => 'css',
-				'group' 	  => __( 'Design options', 'js_composer' )
+				'group' 	  => esc_html__( 'Design options', 'js_composer' )
 			)
 		)
 	)

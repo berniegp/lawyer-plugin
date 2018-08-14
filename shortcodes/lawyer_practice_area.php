@@ -4,7 +4,7 @@
 $args = array( 'post_type' => 'locations', 'numberposts' => -1 );
 vc_map(
 	array(
-		'name'        => __( 'Practice areas', 'js_composer' ),
+		'name'        => esc_html__( 'Practice areas', 'js_composer' ),
 		'base'        => 'lawyer_practice_areas',
 		'params'      => array(
 			array(
@@ -19,9 +19,9 @@ vc_map(
 			),
 			array(
 				'type' 		  => 'textfield',
-				'heading' 	  => __( 'Predefined ids', 'js_composer' ),
+				'heading' 	  => esc_html__( 'Predefined ids', 'js_composer' ),
 				'param_name'  => 'predefined',
-				'description' => __( 'Practice ids, comma separated(ex. 12, 23, 152).', 'js_composer' ),
+				'description' => esc_html__( 'Practice ids, comma separated(ex. 12, 23, 152).', 'js_composer' ),
 				'value' 	  => '',
 				'dependency'  => array( 'element' => 'type', 'value' => 'predefined' )
 			),
@@ -34,14 +34,14 @@ vc_map(
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Limit', 'js_composer' ),
+				'heading'     => esc_html__( 'Limit', 'js_composer' ),
 				'param_name'  => 'limit',
 				'description' => 'Count items to display.',
 				'dependency'  => array( 'element' => 'type', 'value' => 'custom' )
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Excerpt length', 'js_composer' ),
+				'heading'     => esc_html__( 'Excerpt length', 'js_composer' ),
 				'param_name'  => 'excerpt_length',
 				'description' => 'Count symbols to display. Must be a number.'
 			),
@@ -78,17 +78,17 @@ vc_map(
 			),
 			array(
 				'type' 		  => 'textfield',
-				'heading' 	  => __( 'Extra class name', 'js_composer' ),
+				'heading' 	  => esc_html__( 'Extra class name', 'js_composer' ),
 				'param_name'  => 'el_class',
-				'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
+				'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
 				'value' 	  => ''
 			),
 			/* CSS editor */
 			array(
 				'type' 		  => 'css_editor',
-				'heading' 	  => __( 'CSS box', 'js_composer' ),
+				'heading' 	  => esc_html__( 'CSS box', 'js_composer' ),
 				'param_name'  => 'css',
-				'group' 	  => __( 'Design options', 'js_composer' )
+				'group' 	  => esc_html__( 'Design options', 'js_composer' )
 			)
 		)
 	)

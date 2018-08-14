@@ -3,7 +3,7 @@
 
 vc_map(
 	array(
-		'name'        => __( 'Quote', 'js_composer' ),
+		'name'        => esc_html__( 'Quote', 'js_composer' ),
 		'base'        => 'lawyer_quote_text',
 		'params'      => array(
 			array(
@@ -18,39 +18,39 @@ vc_map(
 
 			array(
 				'type'        => 'textarea',
-				'heading'     => __( 'Quote text', 'js_composer' ),
+				'heading'     => esc_html__( 'Quote text', 'js_composer' ),
 				'param_name'  => 'quote'
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Quote author', 'js_composer' ),
+				'heading'     => esc_html__( 'Quote author', 'js_composer' ),
 				'param_name'  => 'author'
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Author position', 'js_composer' ),
+				'heading'     => esc_html__( 'Author position', 'js_composer' ),
 				'param_name'  => 'position'
 			),
 			array(
 				'type'        => 'attach_image',
-				'heading'     => __( 'Author Photo', 'js_composer' ),
+				'heading'     => esc_html__( 'Author Photo', 'js_composer' ),
 				'param_name'  => 'image',
 			),
 
 			array(
 				'type' 		  => 'textfield',
-				'heading' 	  => __( 'Extra class name', 'js_composer' ),
+				'heading' 	  => esc_html__( 'Extra class name', 'js_composer' ),
 				'param_name'  => 'el_class',
-				'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
+				'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
 				'value' 	  => ''
 			),
 
 			/* CSS editor */
 			array(
 				'type' 		  => 'css_editor',
-				'heading' 	  => __( 'CSS box', 'js_composer' ),
+				'heading' 	  => esc_html__( 'CSS box', 'js_composer' ),
 				'param_name'  => 'css',
-				'group' 	  => __( 'Design options', 'js_composer' )
+				'group' 	  => esc_html__( 'Design options', 'js_composer' )
 			)
 
 		)

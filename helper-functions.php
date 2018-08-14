@@ -462,7 +462,7 @@ if ( ! function_exists( 'lawyer_get_categories' ) ) {
 		$list       = array();
 
 		if ( ! empty( $categories ) ) {
-			$list[ esc_html__( 'All', 'lawyer' ) ] = 'all';
+			$list[ esc_html__( 'All', 'lawyer-plugin' ) ] = 'all';
 
 			foreach ( $categories as $category ) {
 				$list[ $category->name ] = $category->slug;

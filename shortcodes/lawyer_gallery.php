@@ -4,18 +4,18 @@
  */
 
 vc_map( array(
-	'name'            => __( 'Gallery', 'js_composer' ),
+	'name'            => esc_html__( 'Gallery', 'js_composer' ),
 	'base'            => 'lawyer_portfolio',
 	'params'          => array(
 		array(
 			'type'        => 'vc_efa_chosen',
-			'heading'     => __( 'Custom Categories', 'js_composer' ),
+			'heading'     => esc_html__( 'Custom Categories', 'js_composer' ),
 			'param_name'  => 'categories',
 			'placeholder' => 'Choose category (optional)',
 			'value'       => lawyer_param_values( 'terms', array( 'taxonomies' => 'gallery-category' ) ),
 			'std'         => '',
 			'admin_label' => true,
-			'description' => __( 'You can choose spesific categories for gallery, default is all categories', 'js_composer' ),
+			'description' => esc_html__( 'You can choose spesific categories for gallery, default is all categories', 'js_composer' ),
 		),
 		array(
 			'type' 		  => 'dropdown',
@@ -52,11 +52,11 @@ vc_map( array(
 		),
 		array(
 			'type'        => 'textfield',
-			'heading'     => __( 'Count items', 'js_composer' ),
+			'heading'     => esc_html__( 'Count items', 'js_composer' ),
 			'param_name'  => 'limit',
 			'value'       => '',
 			'admin_label' => true,
-			'description' => __( 'Default 6 items.', 'js_composer' )
+			'description' => esc_html__( 'Default 6 items.', 'js_composer' )
 		),
 		array(
 			'type' 		  => 'dropdown',
@@ -73,17 +73,17 @@ vc_map( array(
 		/* Portfolio style */
 		array(
 			'type' 		  => 'textfield',
-			'heading' 	  => __( 'Extra class name', 'js_composer' ),
+			'heading' 	  => esc_html__( 'Extra class name', 'js_composer' ),
 			'param_name'  => 'el_class',
-			'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
+			'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
 			'value' 	  => ''
 		),
 		/* CSS editor */
 		array(
 			'type' 		  => 'css_editor',
-			'heading' 	  => __( 'CSS box', 'js_composer' ),
+			'heading' 	  => esc_html__( 'CSS box', 'js_composer' ),
 			'param_name'  => 'css',
-			'group' 	  => __( 'Design options', 'js_composer' )
+			'group' 	  => esc_html__( 'Design options', 'js_composer' )
 		)
 
 	)

@@ -3,7 +3,7 @@
 
 vc_map(
 	array(
-		'name'        => __( 'Clients', 'js_composer' ),
+		'name'        => esc_html__( 'Clients', 'js_composer' ),
 		'base'        => 'lawyer_clients',
 		'params'      => array(
 			array(
@@ -20,14 +20,14 @@ vc_map(
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Timeout speed', 'js_composer' ),
+				'heading'     => esc_html__( 'Timeout speed', 'js_composer' ),
 				'param_name'  => 'timeout_speed',
 				'value' 	  => '5000',
 				'admin_label' => true,
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Slide speed', 'js_composer' ),
+				'heading'     => esc_html__( 'Slide speed', 'js_composer' ),
 				'param_name'  => 'slide_speed',
 				'value' 	  => '300',
 				'admin_label' => true,
@@ -35,17 +35,17 @@ vc_map(
 
 			array(
 				'type'       => 'param_group',
-				'heading'    => __( 'Items', 'js_composer' ),
+				'heading'    => esc_html__( 'Items', 'js_composer' ),
 				'param_name' => 'items',
 				'params'     => array(
 					array(
 						'type'        => 'attach_image',
-						'heading'     => __( 'Client Logo', 'js_composer' ),
+						'heading'     => esc_html__( 'Client Logo', 'js_composer' ),
 						'param_name'  => 'client_logo',
 					),
 					array(
 						'type'        => 'vc_link',
-						'heading'     => __( 'Client url', 'js_composer' ),
+						'heading'     => esc_html__( 'Client url', 'js_composer' ),
 						'param_name'  => 'client_url',
 					),
 				),
@@ -56,17 +56,17 @@ vc_map(
 
 			array(
 				'type' 		  => 'textfield',
-				'heading' 	  => __( 'Extra class name', 'js_composer' ),
+				'heading' 	  => esc_html__( 'Extra class name', 'js_composer' ),
 				'param_name'  => 'el_class',
-				'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
+				'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
 				'value' 	  => ''
 			),
 			/* CSS editor */
 			array(
 				'type' 		  => 'css_editor',
-				'heading' 	  => __( 'CSS box', 'js_composer' ),
+				'heading' 	  => esc_html__( 'CSS box', 'js_composer' ),
 				'param_name'  => 'css',
-				'group' 	  => __( 'Design options', 'js_composer' )
+				'group' 	  => esc_html__( 'Design options', 'js_composer' )
 			)
 		)
 	)

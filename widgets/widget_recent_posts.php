@@ -12,7 +12,7 @@ if( ! class_exists( 'Lawyer_Recent_Posts' ) ) {
 			$widget_ops     = array(
 				'classname'   => 'widget-latest-posts',
 				// 'classname'   => 'widget-latest-posts-thumb',
-				'description' => 'Lawyer Theme Widget.'
+				'description' => esc_html__( 'Lawyer Theme Widget.', 'lawyer-plugin' )
 			);
 			parent::__construct( 'Lawyer_Recent_Posts', 'Lawyer - Recent posts', $widget_ops );
 		}
@@ -23,10 +23,12 @@ if( ! class_exists( 'Lawyer_Recent_Posts' ) ) {
 
 			echo $before_widget;
 
+			$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance );
+
 			if ( ! empty( $instance['title'] ) ) {
-				echo $before_title . $instance['title'] . $after_title;
+				echo $before_title . $title . $after_title;
 			}
-			
+
 			$category = '';
 			if ( ! empty( $instance['category'] ) && $instance['category'] != 'all' ) {
 				$cats = explode( ',', $instance['category'] );
@@ -125,7 +127,7 @@ if( ! class_exists( 'Lawyer_Recent_Posts' ) ) {
 			// set defaults
 			// -------------------------------------------------
 			$instance   = wp_parse_args( $instance, array(
-				'title'  			 => 'Recent posts',
+				'title'  			 => esc_html__( 'Recent posts', 'lawyer-plugin' ),
 				'category'   		 => 'all',
 				'limit'   			 => 3,
 				'thumbnail'   		 => false,
@@ -143,7 +145,7 @@ if( ! class_exists( 'Lawyer_Recent_Posts' ) ) {
 				'id'    => $this->get_field_name('title'),
 				'name'  => $this->get_field_name('title'),
 				'type'  => 'text',
-				'title' => 'Title',
+				'title' => esc_html__( 'Title', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $text_field, $text_value );
@@ -156,7 +158,7 @@ if( ! class_exists( 'Lawyer_Recent_Posts' ) ) {
 				'id'      => $this->get_field_name('category'),
 				'name'    => $this->get_field_name('category'),
 				'type'    => 'select',
-				'title'   => 'Posts category',
+				'title'   => esc_html__( 'Posts category', 'lawyer-plugin' ),
 				'options' => lawyer_param_values('categories', array(), true, true)
 			);
 
@@ -170,7 +172,7 @@ if( ! class_exists( 'Lawyer_Recent_Posts' ) ) {
 				'id'    => $this->get_field_name('limit'),
 				'name'  => $this->get_field_name('limit'),
 				'type'  => 'number',
-				'title' => 'Posts number',
+				'title' => esc_html__( 'Posts number', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $text_field, $text_value );
@@ -183,7 +185,7 @@ if( ! class_exists( 'Lawyer_Recent_Posts' ) ) {
 				'id'    => $this->get_field_name('thumbnail'),
 				'name'  => $this->get_field_name('thumbnail'),
 				'type'  => 'switcher',
-				'title' => 'Show thumbnail'
+				'title' => esc_html__( 'Show thumbnail', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $switcher_field, $switcher_value );
@@ -196,7 +198,7 @@ if( ! class_exists( 'Lawyer_Recent_Posts' ) ) {
 				'id'    => $this->get_field_name('date'),
 				'name'  => $this->get_field_name('date'),
 				'type'  => 'switcher',
-				'title' => 'Show post date'
+				'title' => esc_html__( 'Show post date', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $switcher_field, $switcher_value );
@@ -209,7 +211,7 @@ if( ! class_exists( 'Lawyer_Recent_Posts' ) ) {
 				'id'    => $this->get_field_name('ex_title'),
 				'name'  => $this->get_field_name('ex_title'),
 				'type'  => 'switcher',
-				'title' => 'Excerpt post title'
+				'title' => esc_html__( 'Excerpt post title', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $switcher_field, $switcher_value );
@@ -222,7 +224,7 @@ if( ! class_exists( 'Lawyer_Recent_Posts' ) ) {
 				'id'    	 => $this->get_field_name('lenght'),
 				'name' 		 => $this->get_field_name('lenght'),
 				'type'  	 => 'number',
-				'title' 	 => 'Title excerpt symbol count',
+				'title' 	 => esc_html__( 'Title excerpt symbol count', 'lawyer-plugin' ),
 				'dependency' => array( $this->get_field_name('ex_title'), '==', true )
 			);
 
@@ -236,7 +238,7 @@ if( ! class_exists( 'Lawyer_Recent_Posts' ) ) {
 				'id'    => $this->get_field_name('description'),
 				'name'  => $this->get_field_name('description'),
 				'type'  => 'switcher',
-				'title' => 'Show post description'
+				'title' => esc_html__( 'Show post description', 'lawyer-plugin' )
 			);
 
 			echo cs_add_element( $switcher_field, $switcher_value );
@@ -249,7 +251,7 @@ if( ! class_exists( 'Lawyer_Recent_Posts' ) ) {
 				'id'    	 => $this->get_field_name('description_lenght'),
 				'name'  	 => $this->get_field_name('description_lenght'),
 				'type'  	 => 'number',
-				'title' 	 => 'Description excerpt symbol count',
+				'title' 	 => esc_html__( 'Description excerpt symbol count', 'lawyer-plugin' ),
 				'dependency' => array( $this->get_field_name('description'), '==', true )
 			);
 

@@ -3,7 +3,7 @@
 
 vc_map(
 	array(
-		'name'        => __( 'People', 'js_composer' ),
+		'name'        => esc_html__( 'People', 'js_composer' ),
 		'base'        => 'lawyer_people',
 		'params'      => array(
 			array(
@@ -28,31 +28,31 @@ vc_map(
 
 			array(
 				'type' 		  => 'textfield',
-				'heading' 	  => __( 'Limit', 'js_composer' ),
+				'heading' 	  => esc_html__( 'Limit', 'js_composer' ),
 				'param_name'  => 'limit',
-				'description' => __( 'If pagination is enabled this options works as post per page.', 'js_composer' ),
+				'description' => esc_html__( 'If pagination is enabled this options works as post per page.', 'js_composer' ),
 			),
 
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Predefined ids', 'js_composer' ),
+				'heading'     => esc_html__( 'Predefined ids', 'js_composer' ),
 				'param_name'  => 'predefined',
 				'description' => 'People post ids, comma separated(ex. 12, 23, 152).'
 			),
 
 			array(
 				'type' 		  => 'textfield',
-				'heading' 	  => __( 'Extra class name', 'js_composer' ),
+				'heading' 	  => esc_html__( 'Extra class name', 'js_composer' ),
 				'param_name'  => 'el_class',
-				'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
+				'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' ),
 				'value' 	  => ''
 			),
 			/* CSS editor */
 			array(
 				'type' 		  => 'css_editor',
-				'heading' 	  => __( 'CSS box', 'js_composer' ),
+				'heading' 	  => esc_html__( 'CSS box', 'js_composer' ),
 				'param_name'  => 'css',
-				'group' 	  => __( 'Design options', 'js_composer' )
+				'group' 	  => esc_html__( 'Design options', 'js_composer' )
 			)
 
 		)
