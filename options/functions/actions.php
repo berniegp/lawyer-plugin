@@ -36,7 +36,7 @@ if( ! function_exists( 'cs_get_icons' ) ) {
 
     }
 
-    do_action( 'cs_add_icons' );
+//    do_action( 'cs_add_icons' );
     do_action( 'cs_add_icons_after' );
 
     die();
