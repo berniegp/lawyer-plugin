@@ -182,7 +182,7 @@ function lawyer_rebuild_styles() {
 		
 		$compiled = $scss->compile( $content );
 
-		$file = fopen( LAWYER_T_PATH . '/assets/css/customize.css', 'w' );
+		$file = fopen( LAWYER_T_PATH . '/assets/css/main.css', 'w' );
 		if ( $file ) {
 			fwrite( $file, $compiled );
 			fclose( $file );
