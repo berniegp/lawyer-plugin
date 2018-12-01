@@ -149,7 +149,7 @@ if( ! function_exists( 'lawyer_param_values' ) ) {
  */
 if( ! function_exists( 'lawyer_poeple_add_location' ) ) {
 	function lawyer_poeple_add_location() {
-		add_meta_box( 'people-location', 'Location', 'lawyer_view_people_location_option', 'people', 'side', 'high' );
+		add_meta_box( 'people-location', esc_html__( 'Location', 'lawyer-plugin' ), 'lawyer_view_people_location_option', 'people', 'side', 'high' );
 	}
 }
 add_action( 'add_meta_boxes', 'lawyer_poeple_add_location' );
@@ -165,7 +165,7 @@ if( ! function_exists( 'lawyer_view_people_location_option' ) ) {
 		$locations = lawyer_param_values( 'posts', $args ); ?>
 
 		<p>
-			<label for="people-location">Select location: </label>
+			<label for="people-location"><?php esc_html_e( 'Select location', 'lawyer-plugin' ) ?>: </label>
 			<select name='people-location' id='people-location'>
 				<?php foreach ($locations as $name => $id): ?>
 				<option value="<?php echo $id; ?>" <?php selected( $id, $post_meta); ?>><?php echo esc_html($name); ?></option>
@@ -199,67 +199,6 @@ if( ! function_exists( 'lawyer_save_people_location' ) ) {
 	}
 }
 add_action( 'save_post', 'lawyer_save_people_location' );
-
-
-/**
- *
- * Get twitts
- *
- */
-if( ! function_exists( 'lawyer_get_twitts' ) ) {
-	function lawyer_get_twitts( $user, $count_twitts = 3, $style = '', $echo = true ) {
-
-		if ( ! file_exists( EF_ROOT . '/TwitterAPIExchange.php' ) ) {
-			return false;
-		}
-
-		$options = false;
-
-		if( function_exists( 'lawyer_get_options' ) ) {
-			$tw_access_token 		= lawyer_get_options('tw_access_token');
-			$tw_access_token_secret = lawyer_get_options('tw_access_token_secret');
-			$tw_consumer_key 		= lawyer_get_options('tw_consumer_key');
-			$tw_consumer_secret 	= lawyer_get_options('tw_consumer_secret');
-
-			if( $tw_access_token && $tw_access_token_secret && $tw_consumer_key && $tw_consumer_secret ) {
-				$options = true;
-			}
-		}
-
-		if( $options ) {
-			require_once EF_ROOT . '/TwitterAPIExchange.php';
-
-			$settings = array(
-				'oauth_access_token' 		=> $tw_access_token,
-				'oauth_access_token_secret' => $tw_access_token_secret,
-				'consumer_key' 				=> $tw_consumer_key,
-				'consumer_secret' 			=> $tw_consumer_secret
-			);
-
-			$url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-			$requestMethod = 'GET';
-			$getfield = '?screen_name='. $user .'&count='. $count_twitts .'&exclude_replies=true&skip_status=1';
-			$twitter = new TwitterAPIExchange($settings);
-			
-			$data = $twitter->setGetfield($getfield)
-				->buildOauth($url, $requestMethod)
-				->performRequest();
-
-			$twitts = json_decode( $data );
-			
-			if( ! empty( $twitts ) && is_array( $twitts ) ) {
-
-				return $twitts;
-			} else {
-
-				return false;
-			}
-		} else {
-
-			return false;
-		}
-	}
-}
 
 
 /**

@@ -23,61 +23,54 @@ if( ! class_exists( 'Lawyer_Twitter' ) ) {
 			echo $before_widget;
 
 			$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance );
+			$limit = isset($instance['twitts']) ? $instance['twitts'] : 3;
+			$enable_links = isset($instance['links']) ? 'true' : 'false';
+			$enable_images = isset($instance['images']) ? 'true' : 'false';
+			$show_user = isset($instance['user']) ? 'true' : 'false';
+			$show_time = isset($instance['time']) ? 'true' : 'false';
+			$twitter_screen_name =  isset($instance['username']) ? $instance['username'] : 'ThemeMakers';
+			$hash = md5(rand(1, 999));
 
 			if ( ! empty( $instance['title'] ) ) {
 				echo $before_title . $title . $after_title;
 			}
 
-
 			if ( ! empty( $instance['username'] ) ) {
-				$count = ! empty( $instance['twitts'] ) ? $instance['twitts'] : 2;
 
-				$twitts = lawyer_get_twitts( $instance['username'], $count );
-				if ( $twitts ) {
-					$item_class = $instance['icon'] ? '' : ' no-icon';
-					$user_link = $instance['user'] ? '<a href="https://twitter.com/' . $instance['username'] . '">@' . $instance['username'] . '</a>' : '';
+				?>
 
-					$links  = $instance['links'];
-					$user   = $instance['user'];
-					$time   = $instance['time'];
-					$images = $instance['images'];
+				<script type="text/javascript">
+					jQuery(function() {
+						var config = {
+							"profile": {"screenName": '<?php echo esc_js($twitter_screen_name); ?>'},
+							"domId": 'tweets_<?php echo esc_js($hash); ?>',
+							"maxTweets": <?php echo esc_attr((int) $limit) ?>,
+							"enableLinks": <?php echo esc_attr( $enable_links ) ?>,
+							"showImages": <?php echo esc_attr( $enable_images ) ?>,
+							"showUser": <?php echo esc_attr( $show_user ) ?>,
+							"showTime": <?php echo esc_attr( $show_time ) ?>,
+							"showRetweet": false,
+							"showInteraction": false
 
-					foreach ( $twitts as $twitt ) {
-						$text = $twitt->text;
-						$img = '';
-						$date = '';
+						};
+						twitterFetcher.fetch(config);
+					});
+				</script>
 
+				<div class="widget-twitter" id="tweets_<?php echo esc_attr($hash) ?>"></div>
 
-						if ( $images && isset( $twitt->entities->media ) ) {
-							$media = $twitt->entities->media;
+				<?php
+			} else {
+				?>
 
-							$text = str_replace( $media[0]->url, '', $text );
-							$media_url = is_ssl() ? $media[0]->media_url_https : $media[0]->media_url;
+				<p><?php esc_html_e( 'Twitter Username is not set', 'lawyer-plugin' ); ?></p>
 
-							$img = '<img src="' . $media_url . '" alt="">';
-
-						}
-
-						if ( $time ) {
-							$timestamp = strtotime( $twitt->created_at );
-							$date = '<p class="widget-twitter__date">' . esc_html__( 'Posted on', 'lawyer-plugin' ) . ' ' . date( 'd M', $timestamp ) . '</p>';
-						}
-
-						if ( $links ) {
-							$text = preg_replace('/(http[s]{0,1}\:\/\/\S{4,})\s{0,}/ims', '<a href="$1" target="_blank">$1</a> ', $text);
-						} ?>
-
-						<div class="widget-twitter__data <?php echo $item_class; ?>">
-							<p><?php echo $text, $img; ?></p>
-							<?php echo $date; ?>
-							<?php echo $user_link; ?>
-						</div>
-						<?php
-					}
-				}
+				<?php
 			}
 
 			echo $after_widget;
+
+			wp_enqueue_script( 'lawyer-twitter-fetcher', EF_URI . '/assets/js/twitterFetcher_min.js', array( 'jquery' ), false, true );
 
 		}
 
@@ -87,7 +80,6 @@ if( ! class_exists( 'Lawyer_Twitter' ) ) {
 			$instance['title']    = $new_instance['title'];
 			$instance['username'] = $new_instance['username'];
 			$instance['twitts']   = $new_instance['twitts'];
-			$instance['icon']     = $new_instance['icon'];
 			$instance['links']    = $new_instance['links'];
 			$instance['images']   = $new_instance['images'];
 			$instance['user']     = $new_instance['user'];
@@ -103,9 +95,8 @@ if( ! class_exists( 'Lawyer_Twitter' ) ) {
 			// -------------------------------------------------
 			$instance   = wp_parse_args( $instance, array(
 				'title'    => esc_html__( 'Twitter', 'lawyer-plugin' ),
-				'username' => '',
+				'username' => 'ThemeMakers',
 				'twitts'   => 2,
-				'icon' 	   => true,
 				'links'    => true,
 				'images'   => false,
 				'user'	   => false,
@@ -123,17 +114,6 @@ if( ! class_exists( 'Lawyer_Twitter' ) ) {
 			);
 
 			echo cs_add_element( $text_field, $text_value );
-
-	
-			// twitts field
-			// -------------------------------------------------
-			$textarea_value = esc_attr( $instance['twitts'] );
-			$textarea_field = array(
-				'id'    => $this->get_field_name('twitts'),
-				'name'  => $this->get_field_name('twitts'),
-				'type'  => 'number',
-				'title' => esc_html__( 'Count of tweets', 'lawyer-plugin' )
-			);
 	
 
 			// username field
@@ -149,17 +129,18 @@ if( ! class_exists( 'Lawyer_Twitter' ) ) {
 			echo cs_add_element( $textarea_field, $textarea_value );
 
 
-			// icon field
+			// twitts field
 			// -------------------------------------------------
-			$switcher_value = esc_attr( $instance['icon'] );
-			$switcher_field = array(
-				'id'    => $this->get_field_name('icon'),
-				'name'  => $this->get_field_name('icon'),
-				'type'  => 'switcher',
-				'title' => esc_html__( 'Show icons', 'lawyer-plugin' )
+			$textarea_value = esc_attr( $instance['twitts'] );
+			$textarea_field = array(
+				'id'    => $this->get_field_name('twitts'),
+				'name'  => $this->get_field_name('twitts'),
+				'type'  => 'number',
+				'title' => esc_html__( 'Number of tweets', 'lawyer-plugin' )
 			);
 
-			echo cs_add_element( $switcher_field, $switcher_value );
+			echo cs_add_element( $textarea_field, $textarea_value );
+
 
 			// links field
 			// -------------------------------------------------
