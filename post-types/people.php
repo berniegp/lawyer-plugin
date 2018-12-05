@@ -29,7 +29,7 @@ if ( ! function_exists( 'lawyer_register_people_post_type' ) ) {
 				),
 				'hierarchical' => false,
 				'labels' 	   => array(
-					'add_new_item' => 'Add New Practice area',
+					'add_new_item' => esc_html__( 'Add New Practice area', 'lawyer-plugin' ),
 				)
 			)
 		);

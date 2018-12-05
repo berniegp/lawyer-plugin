@@ -67,6 +67,7 @@ class WPBakeryShortCode_lawyer_banner extends WPBakeryShortCode{
 		$class .= vc_shortcode_custom_css_class( $css, ' ' );
 
 		$img_url = wp_get_attachment_image_url( $image, 'full' );
+		$heading_background = isset( $img_url ) ? 'background-image: url(' . $img_url . ')' : '';
 		ob_start();
 		if ( $style == 'style1' && ! empty( $image ) ) { ?>
 
@@ -78,8 +79,7 @@ class WPBakeryShortCode_lawyer_banner extends WPBakeryShortCode{
 		} 
 		if ( $style == 'style2' && ! empty( $image ) ) { ?>
 
-			<div class="page-heading page-heading--height-3 overlay <?php echo esc_attr( $class );?>">
-				<img class="s-img-switch" src="<?php echo esc_url( $img_url ); ?>" alt="" />
+			<div class="page-heading page-heading--height-3 overlay s-back-switch <?php echo esc_attr( $class );?>"<?php if ( ! empty( $img_url ) ){ ?> style="<?php echo esc_attr( $heading_background ) ?>" <?php } ?>>
 				<?php if ( ! empty( $title ) ): ?>
 					<h2 class="page-heading__title"><?php echo esc_html( $title ); ?></h2>
 				<?php endif ?>
@@ -95,8 +95,7 @@ class WPBakeryShortCode_lawyer_banner extends WPBakeryShortCode{
 		<?php }
 		if ( $style == 'style4' && ! empty( $image ) ) { ?>
 
-			<div class="page-heading overlay <?php echo esc_attr( $class );?>">
-				<img class="s-img-switch" src="<?php echo esc_url( $img_url ); ?>" alt="" />
+			<div class="page-heading overlay s-back-switch <?php echo esc_attr( $class );?>"<?php if ( ! empty( $img_url ) ){ ?> style="<?php echo esc_attr( $heading_background ) ?>" <?php } ?>>
 				<?php if ( ! empty( $title ) ): ?>
 					<h2 class="page-heading__title"><?php echo esc_html( $title ); ?></h2>
 				<?php endif ?>
@@ -105,8 +104,7 @@ class WPBakeryShortCode_lawyer_banner extends WPBakeryShortCode{
 		<?php }
 		if ( $style == 'style5' && ! empty( $image ) ) { ?>
 
-			<div class="page-heading page-heading--height-2 overlay <?php echo esc_attr( $class );?>">
-				<img class="s-img-switch" src="<?php echo esc_url( $img_url ); ?>" alt="" />
+			<div class="page-heading page-heading--height-2 overlay s-back-switch <?php echo esc_attr( $class );?>"<?php if ( ! empty( $img_url ) ){ ?> style="<?php echo esc_attr( $heading_background ) ?>" <?php } ?>>
 				<?php if ( ! empty( $title ) ): ?>
 					<h2 class="page-heading__title"><?php echo esc_html( $title ); ?></h2>
 				<?php endif ?>
@@ -117,4 +115,3 @@ class WPBakeryShortCode_lawyer_banner extends WPBakeryShortCode{
 		return ob_get_clean();
 	}
 }
-

@@ -132,7 +132,6 @@ $options[]      = array(
 			'title'      => 'Info text',
 			'dependency' => array( 'header_additional_info', '==', true )
 		),
-
 		array(
 			'id'         => 'header_style',
 			'type'       => 'select',
@@ -327,36 +326,7 @@ $options[]      = array(
 			'type'    => 'text',
 			'title'   => 'Google Map API key',
 			'default' => ''
-		),
-		array(
-			'type'    => 'notice',
-			'class'   => 'info',
-			'content' => 'Info: You can get Twitter API credentials <a target="_blank" href="' . esc_url( $tw_apps ) . '">here</a>.',
-		),
-		array(
-			'id'      => 'tw_access_token',
-			'type'    => 'text',
-			'title'   => 'Access token',
-			'default' => ''
-		),
-		array(
-			'id'      => 'tw_access_token_secret',
-			'type'    => 'text',
-			'title'   => 'Access token secret',
-			'default' => ''
-		),
-		array(
-			'id'      => 'tw_consumer_key',
-			'type'    => 'text',
-			'title'   => 'Consumer key',
-			'default' => ''
-		),
-		array(
-			'id'      => 'tw_consumer_secret',
-			'type'    => 'text',
-			'title'   => 'Consumer_secret',
-			'default' => ''
-		),
+		)
 	)
 );
 

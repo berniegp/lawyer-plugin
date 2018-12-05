@@ -286,9 +286,25 @@ $options[]    = array(
 			'name'   => 'section',
 			'fields' => array(
 				array(
+					'id'       => 'header_style',
+					'type'     => 'select',
+					'title'    => 'Header style',
+					'options'  => array(
+						'default' => 'Default (theme options)',
+						'one'     => 'Style 1',
+						'two'     => 'Style 2',
+						'three'   => 'Style 3'
+					)
+				),
+				array(
+					'id'    => 'heading',
+					'type'  => 'switcher',
+					'title' => 'Page heading',
+				),
+				array(
 					'id'        => 'heading_background',
 					'type'      => 'upload',
-					'title'     => 'Heading background image',
+					'title'     => 'Page title background image',
 					'settings'      => array(
 						'upload_type'  => 'image',
 						'button_title' => 'Upload',
@@ -297,14 +313,13 @@ $options[]    = array(
 					)
 				),
 				array(
-					'id'       => 'header_style',
+					'id'       => 'heading_height',
 					'type'     => 'select',
-					'title'    => 'Header style',
+					'title'    => 'Page title height',
 					'options'  => array(
-						'default' => 'Default(theme options)',
-						'one'     => 'Style 1',
-						'two'     => 'Style 2',
-						'three'   => 'Style 3'
+						'one'     => 'Style 1 (150px)',
+						'two'     => 'Style 2 (250px)',
+						'three'   => 'Style 3 (350px)'
 					)
 				)
 			)
