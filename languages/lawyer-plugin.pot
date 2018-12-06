@@ -3,15 +3,16 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Lawyer Theme Plugin\n"
-"POT-Creation-Date: 2017-08-22 22:30+0200\n"
-"PO-Revision-Date: 2017-08-22 22:30+0200\n"
+"POT-Creation-Date: 2018-12-06 21:01+0100\n"
+"PO-Revision-Date: 2018-12-06 21:01+0100\n"
 "Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
 "Language-Team: Alex TM <support@webtemplatemasters.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.12\n"
-"X-Poedit-Basepath: ../..\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: lawyer-plugin.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -38,6 +39,18 @@ msgstr ""
 
 #: helper-functions.php:131
 msgid "not found categories"
+msgstr ""
+
+#: helper-functions.php:152 post-types/locations.php:11
+msgid "Location"
+msgstr ""
+
+#: helper-functions.php:168
+msgid "Select location"
+msgstr ""
+
+#: helper-functions.php:404
+msgid "All"
 msgstr ""
 
 #: options/classes/framework.class.php:175
@@ -238,11 +251,8 @@ msgid "Categories"
 msgstr ""
 
 #: post-types/locations.php:10 shortcodes/lawyer_locations.php:16
+#: widgets/widget_practice_areas.php:103 widgets/widget_sectors.php:103
 msgid "Locations"
-msgstr ""
-
-#: post-types/locations.php:11
-msgid "Location"
 msgstr ""
 
 #: post-types/people.php:10 post-types/people.php:11
@@ -251,18 +261,24 @@ msgid "People"
 msgstr ""
 
 #: post-types/people.php:26 shortcodes/lawyer_practice_area.php:7
+#: widgets/widget_practice_areas.php:79
 msgid "Practice areas"
+msgstr ""
+
+#: post-types/people.php:32
+msgid "Add New Practice area"
 msgstr ""
 
 #: post-types/people.php:41
 msgid "Languages"
 msgstr ""
 
-#: post-types/people.php:53
+#: post-types/people.php:53 widgets/widget_sectors.php:79
 msgid "Sectors"
 msgstr ""
 
 #: post-types/testimonials.php:10 shortcodes/lawyer_testimonials.php:6
+#: widgets/widget_testimonials.php:132
 msgid "Testimonials"
 msgstr ""
 
@@ -293,11 +309,11 @@ msgstr ""
 #: shortcodes/lawyer_button.php:46 shortcodes/lawyer_clients.php:59
 #: shortcodes/lawyer_contacts.php:57 shortcodes/lawyer_cta.php:22
 #: shortcodes/lawyer_faq.php:31 shortcodes/lawyer_find_a_lawyer.php:32
-#: shortcodes/lawyer_gallery.php:76 shortcodes/lawyer_google_maps.php:108
+#: shortcodes/lawyer_gallery.php:76 shortcodes/lawyer_google_maps.php:113
 #: shortcodes/lawyer_icon_text.php:56 shortcodes/lawyer_image.php:46
 #: shortcodes/lawyer_list.php:36 shortcodes/lawyer_locations.php:46
 #: shortcodes/lawyer_people.php:45 shortcodes/lawyer_practice_area.php:81
-#: shortcodes/lawyer_quote.php:42 shortcodes/lawyer_recent_posts.php:63
+#: shortcodes/lawyer_quote.php:42 shortcodes/lawyer_recent_posts.php:88
 #: shortcodes/lawyer_separator.php:21 shortcodes/lawyer_sidebar.php:17
 #: shortcodes/lawyer_social.php:29 shortcodes/lawyer_tabs.php:15
 #: shortcodes/lawyer_testimonials.php:96 shortcodes/lawyer_text_block.php:16
@@ -310,11 +326,11 @@ msgstr ""
 #: shortcodes/lawyer_button.php:48 shortcodes/lawyer_clients.php:61
 #: shortcodes/lawyer_contacts.php:59 shortcodes/lawyer_cta.php:24
 #: shortcodes/lawyer_faq.php:33 shortcodes/lawyer_find_a_lawyer.php:34
-#: shortcodes/lawyer_gallery.php:78 shortcodes/lawyer_google_maps.php:110
+#: shortcodes/lawyer_gallery.php:78 shortcodes/lawyer_google_maps.php:115
 #: shortcodes/lawyer_icon_text.php:58 shortcodes/lawyer_image.php:48
 #: shortcodes/lawyer_list.php:38 shortcodes/lawyer_locations.php:48
 #: shortcodes/lawyer_people.php:47 shortcodes/lawyer_practice_area.php:83
-#: shortcodes/lawyer_quote.php:44 shortcodes/lawyer_recent_posts.php:65
+#: shortcodes/lawyer_quote.php:44 shortcodes/lawyer_recent_posts.php:90
 #: shortcodes/lawyer_separator.php:23 shortcodes/lawyer_sidebar.php:19
 #: shortcodes/lawyer_social.php:31 shortcodes/lawyer_tabs.php:17
 #: shortcodes/lawyer_testimonials.php:98 shortcodes/lawyer_text_block.php:18
@@ -329,11 +345,11 @@ msgstr ""
 #: shortcodes/lawyer_button.php:55 shortcodes/lawyer_clients.php:67
 #: shortcodes/lawyer_contacts.php:65 shortcodes/lawyer_cta.php:30
 #: shortcodes/lawyer_faq.php:39 shortcodes/lawyer_find_a_lawyer.php:40
-#: shortcodes/lawyer_gallery.php:84 shortcodes/lawyer_google_maps.php:116
+#: shortcodes/lawyer_gallery.php:84 shortcodes/lawyer_google_maps.php:121
 #: shortcodes/lawyer_icon_text.php:64 shortcodes/lawyer_image.php:54
 #: shortcodes/lawyer_list.php:44 shortcodes/lawyer_locations.php:54
 #: shortcodes/lawyer_people.php:53 shortcodes/lawyer_practice_area.php:89
-#: shortcodes/lawyer_quote.php:51 shortcodes/lawyer_recent_posts.php:71
+#: shortcodes/lawyer_quote.php:51 shortcodes/lawyer_recent_posts.php:96
 #: shortcodes/lawyer_separator.php:29 shortcodes/lawyer_sidebar.php:25
 #: shortcodes/lawyer_social.php:37 shortcodes/lawyer_tabs.php:23
 #: shortcodes/lawyer_testimonials.php:104 shortcodes/lawyer_text_block.php:24
@@ -346,11 +362,11 @@ msgstr ""
 #: shortcodes/lawyer_button.php:57 shortcodes/lawyer_clients.php:69
 #: shortcodes/lawyer_contacts.php:67 shortcodes/lawyer_cta.php:32
 #: shortcodes/lawyer_faq.php:41 shortcodes/lawyer_find_a_lawyer.php:42
-#: shortcodes/lawyer_gallery.php:86 shortcodes/lawyer_google_maps.php:118
+#: shortcodes/lawyer_gallery.php:86 shortcodes/lawyer_google_maps.php:123
 #: shortcodes/lawyer_icon_text.php:66 shortcodes/lawyer_image.php:56
 #: shortcodes/lawyer_list.php:46 shortcodes/lawyer_locations.php:56
 #: shortcodes/lawyer_people.php:55 shortcodes/lawyer_practice_area.php:91
-#: shortcodes/lawyer_quote.php:53 shortcodes/lawyer_recent_posts.php:73
+#: shortcodes/lawyer_quote.php:53 shortcodes/lawyer_recent_posts.php:98
 #: shortcodes/lawyer_separator.php:31 shortcodes/lawyer_sidebar.php:27
 #: shortcodes/lawyer_social.php:39 shortcodes/lawyer_tabs.php:25
 #: shortcodes/lawyer_testimonials.php:106 shortcodes/lawyer_text_block.php:26
@@ -367,6 +383,11 @@ msgstr ""
 #: shortcodes/lawyer_find_a_lawyer.php:11 shortcodes/lawyer_icon_text.php:24
 #: shortcodes/lawyer_recent_posts.php:11 shortcodes/lawyer_tabs.php:86
 #: shortcodes/lawyer_title.php:6 shortcodes/lawyer_title.php:11
+#: widgets/widget_contacts.php:107 widgets/widget_find_a_lawyer.php:116
+#: widgets/widget_offices.php:87 widgets/widget_practice_areas.php:90
+#: widgets/widget_recent_posts.php:148 widgets/widget_sectors.php:90
+#: widgets/widget_subscriptions.php:71 widgets/widget_testimonials.php:152
+#: widgets/widget_twitter.php:113
 msgid "Title"
 msgstr ""
 
@@ -403,10 +424,12 @@ msgid "Clients"
 msgstr ""
 
 #: shortcodes/lawyer_clients.php:23 shortcodes/lawyer_testimonials.php:82
+#: widgets/widget_testimonials.php:275
 msgid "Timeout speed"
 msgstr ""
 
 #: shortcodes/lawyer_clients.php:30 shortcodes/lawyer_testimonials.php:89
+#: widgets/widget_testimonials.php:288
 msgid "Slide speed"
 msgstr ""
 
@@ -442,11 +465,12 @@ msgstr ""
 msgid "Mobile marg bottom"
 msgstr ""
 
-#: shortcodes/lawyer_contacts.php:6
+#: shortcodes/lawyer_contacts.php:6 widgets/widget_contacts.php:87
 msgid "Contacts"
 msgstr ""
 
 #: shortcodes/lawyer_contacts.php:11 shortcodes/lawyer_google_maps.php:42
+#: widgets/widget_contacts.php:130
 msgid "Address"
 msgstr ""
 
@@ -454,11 +478,11 @@ msgstr ""
 msgid "City"
 msgstr ""
 
-#: shortcodes/lawyer_contacts.php:21
+#: shortcodes/lawyer_contacts.php:21 widgets/widget_contacts.php:154
 msgid "Region"
 msgstr ""
 
-#: shortcodes/lawyer_contacts.php:26
+#: shortcodes/lawyer_contacts.php:26 widgets/widget_contacts.php:166
 msgid "Postal Code"
 msgstr ""
 
@@ -466,35 +490,35 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
-#: shortcodes/lawyer_contacts.php:36
+#: shortcodes/lawyer_contacts.php:36 widgets/widget_contacts.php:190
 msgid "Phone"
 msgstr ""
 
-#: shortcodes/lawyer_contacts.php:41
+#: shortcodes/lawyer_contacts.php:41 widgets/widget_contacts.php:202
 msgid "Fax"
 msgstr ""
 
-#: shortcodes/lawyer_contacts.php:46
+#: shortcodes/lawyer_contacts.php:46 widgets/widget_contacts.php:214
 msgid "Email"
 msgstr ""
 
-#: shortcodes/lawyer_contacts.php:51
+#: shortcodes/lawyer_contacts.php:51 widgets/widget_contacts.php:226
 msgid "Show labels"
 msgstr ""
 
-#: shortcodes/lawyer_contacts.php:125 widgets/widget_contacts.php:32
+#: shortcodes/lawyer_contacts.php:125 widgets/widget_contacts.php:34
 msgid "Address:"
 msgstr ""
 
-#: shortcodes/lawyer_contacts.php:131 widgets/widget_contacts.php:38
+#: shortcodes/lawyer_contacts.php:131 widgets/widget_contacts.php:40
 msgid "Phone:"
 msgstr ""
 
-#: shortcodes/lawyer_contacts.php:135 widgets/widget_contacts.php:39
+#: shortcodes/lawyer_contacts.php:135 widgets/widget_contacts.php:41
 msgid "Fax:"
 msgstr ""
 
-#: shortcodes/lawyer_contacts.php:139 widgets/widget_contacts.php:40
+#: shortcodes/lawyer_contacts.php:139 widgets/widget_contacts.php:42
 msgid "Email:"
 msgstr ""
 
@@ -514,35 +538,36 @@ msgstr ""
 msgid "Answer"
 msgstr ""
 
-#: shortcodes/lawyer_find_a_lawyer.php:6
+#: shortcodes/lawyer_find_a_lawyer.php:6 widgets/widget_find_a_lawyer.php:103
 msgid "Find a lawyer"
 msgstr ""
 
-#: shortcodes/lawyer_find_a_lawyer.php:16
+#: shortcodes/lawyer_find_a_lawyer.php:16 widgets/widget_find_a_lawyer.php:129
 msgid "Show name"
 msgstr ""
 
-#: shortcodes/lawyer_find_a_lawyer.php:21
+#: shortcodes/lawyer_find_a_lawyer.php:21 widgets/widget_find_a_lawyer.php:142
 msgid "Show areas"
 msgstr ""
 
-#: shortcodes/lawyer_find_a_lawyer.php:26
+#: shortcodes/lawyer_find_a_lawyer.php:26 widgets/widget_find_a_lawyer.php:155
 msgid "Show offices"
 msgstr ""
 
-#: shortcodes/lawyer_find_a_lawyer.php:72 widgets/widget_find_a_lawyer.php:31
+#: shortcodes/lawyer_find_a_lawyer.php:72 widgets/widget_find_a_lawyer.php:33
 msgid "Name"
 msgstr ""
 
-#: shortcodes/lawyer_find_a_lawyer.php:84 widgets/widget_find_a_lawyer.php:45
+#: shortcodes/lawyer_find_a_lawyer.php:84 widgets/widget_find_a_lawyer.php:47
 msgid "Areas of Practice"
 msgstr ""
 
-#: shortcodes/lawyer_find_a_lawyer.php:99 widgets/widget_find_a_lawyer.php:60
+#: shortcodes/lawyer_find_a_lawyer.php:99 widgets/widget_find_a_lawyer.php:62
+#: widgets/widget_offices.php:75
 msgid "Offices"
 msgstr ""
 
-#: shortcodes/lawyer_find_a_lawyer.php:110 widgets/widget_find_a_lawyer.php:71
+#: shortcodes/lawyer_find_a_lawyer.php:110 widgets/widget_find_a_lawyer.php:73
 msgid "Search"
 msgstr ""
 
@@ -600,10 +625,14 @@ msgid "Marker is draggable"
 msgstr ""
 
 #: shortcodes/lawyer_google_maps.php:97
-msgid "Enable marker with popup"
+msgid "Enable custom marker"
 msgstr ""
 
 #: shortcodes/lawyer_google_maps.php:102
+msgid "Enable marker with popup"
+msgstr ""
+
+#: shortcodes/lawyer_google_maps.php:107
 msgid "HTML content"
 msgstr ""
 
@@ -696,11 +725,11 @@ msgstr ""
 msgid "Author Photo"
 msgstr ""
 
-#: shortcodes/lawyer_recent_posts.php:6
+#: shortcodes/lawyer_recent_posts.php:6 widgets/widget_recent_posts.php:130
 msgid "Recent posts"
 msgstr ""
 
-#: shortcodes/lawyer_recent_posts.php:17
+#: shortcodes/lawyer_recent_posts.php:17 widgets/widget_recent_posts.php:161
 msgid "Posts category"
 msgstr ""
 
@@ -712,27 +741,43 @@ msgstr ""
 msgid "Specified posts"
 msgstr ""
 
-#: shortcodes/lawyer_recent_posts.php:32
+#: shortcodes/lawyer_recent_posts.php:32 widgets/widget_recent_posts.php:175
 msgid "Posts number"
 msgstr ""
 
 #: shortcodes/lawyer_recent_posts.php:37
-msgid "Hide dividers between posts"
+msgid "Order By"
 msgstr ""
 
-#: shortcodes/lawyer_recent_posts.php:42
-msgid "Show thumbnail"
+#: shortcodes/lawyer_recent_posts.php:53
+msgid "Order Type"
 msgstr ""
 
-#: shortcodes/lawyer_recent_posts.php:47
-msgid "Hide post date"
-msgstr ""
-
-#: shortcodes/lawyer_recent_posts.php:52
-msgid "Excerpt post title"
+#: shortcodes/lawyer_recent_posts.php:56
+msgid "Ascending"
 msgstr ""
 
 #: shortcodes/lawyer_recent_posts.php:57
+msgid "Descending"
+msgstr ""
+
+#: shortcodes/lawyer_recent_posts.php:62
+msgid "Hide dividers between posts"
+msgstr ""
+
+#: shortcodes/lawyer_recent_posts.php:67 widgets/widget_recent_posts.php:188
+msgid "Show thumbnail"
+msgstr ""
+
+#: shortcodes/lawyer_recent_posts.php:72
+msgid "Hide post date"
+msgstr ""
+
+#: shortcodes/lawyer_recent_posts.php:77 widgets/widget_recent_posts.php:214
+msgid "Excerpt post title"
+msgstr ""
+
+#: shortcodes/lawyer_recent_posts.php:82 widgets/widget_recent_posts.php:227
 msgid "Title excerpt symbol count"
 msgstr ""
 
@@ -764,11 +809,11 @@ msgstr ""
 msgid "Type testimonials ids"
 msgstr ""
 
-#: shortcodes/lawyer_testimonials.php:60
+#: shortcodes/lawyer_testimonials.php:60 widgets/widget_testimonials.php:232
 msgid "Show Position"
 msgstr ""
 
-#: shortcodes/lawyer_testimonials.php:66
+#: shortcodes/lawyer_testimonials.php:66 widgets/widget_testimonials.php:245
 msgid "Show Thumbnail"
 msgstr ""
 
@@ -790,7 +835,9 @@ msgstr ""
 
 #: widgets/widget_contacts.php:14 widgets/widget_find_a_lawyer.php:14
 #: widgets/widget_offices.php:14 widgets/widget_practice_areas.php:14
-#: widgets/widget_sectors.php:14
+#: widgets/widget_recent_posts.php:15 widgets/widget_sectors.php:14
+#: widgets/widget_subscriptions.php:14 widgets/widget_testimonials.php:14
+#: widgets/widget_twitter.php:14
 msgid "Lawyer Theme Widget."
 msgstr ""
 
@@ -798,24 +845,36 @@ msgstr ""
 msgid "Lawyer - Contacts"
 msgstr ""
 
-#: widgets/widget_contacts.php:31
+#: widgets/widget_contacts.php:33
 msgid "Company:"
 msgstr ""
 
-#: widgets/widget_contacts.php:33
+#: widgets/widget_contacts.php:35
 msgid "City:"
 msgstr ""
 
-#: widgets/widget_contacts.php:34
+#: widgets/widget_contacts.php:36
 msgid "Region:"
 msgstr ""
 
-#: widgets/widget_contacts.php:35
+#: widgets/widget_contacts.php:37
 msgid "Zip code:"
 msgstr ""
 
-#: widgets/widget_contacts.php:36
+#: widgets/widget_contacts.php:38
 msgid "Country:"
+msgstr ""
+
+#: widgets/widget_contacts.php:119
+msgid "Organization name"
+msgstr ""
+
+#: widgets/widget_contacts.php:142
+msgid "Сity"
+msgstr ""
+
+#: widgets/widget_contacts.php:178
+msgid "Сountry"
 msgstr ""
 
 #: widgets/widget_find_a_lawyer.php:16
@@ -826,40 +885,120 @@ msgstr ""
 msgid "Lawyer - Offices"
 msgstr ""
 
+#: widgets/widget_offices.php:100
+msgid "Exclude"
+msgstr ""
+
+#: widgets/widget_offices.php:104
+msgid "Comma separated. Office ids will be excluded from a list on frontend"
+msgstr ""
+
 #: widgets/widget_practice_areas.php:16
 msgid "Lawyer - Practice areas"
+msgstr ""
+
+#: widgets/widget_recent_posts.php:201
+msgid "Show post date"
+msgstr ""
+
+#: widgets/widget_recent_posts.php:241
+msgid "Show post description"
+msgstr ""
+
+#: widgets/widget_recent_posts.php:254
+msgid "Description excerpt symbol count"
 msgstr ""
 
 #: widgets/widget_sectors.php:16
 msgid "Lawyer - Sectors"
 msgstr ""
 
-#: widgets/widget_testimonials.php:174
+#: widgets/widget_subscriptions.php:59
+msgid "Subscriptions"
+msgstr ""
+
+#: widgets/widget_subscriptions.php:84
+msgid "Description"
+msgstr ""
+
+#: widgets/widget_subscriptions.php:97
+msgid "Select mailchimp form"
+msgstr ""
+
+#: widgets/widget_testimonials.php:165
+msgid "Show testimonials"
+msgstr ""
+
+#: widgets/widget_testimonials.php:167 widgets/widget_testimonials.php:183
 msgid "Predefined"
 msgstr ""
 
-#: widgets/widget_testimonials.php:175
+#: widgets/widget_testimonials.php:168
 msgid "Random"
 msgstr ""
 
-#: widgets/widget_testimonials.php:176
+#: widgets/widget_testimonials.php:169
 msgid "Latest"
 msgstr ""
 
-#: widgets/widget_testimonials.php:207
+#: widgets/widget_testimonials.php:184
+msgid "Specifies items ids to be shown"
+msgstr ""
+
+#: widgets/widget_testimonials.php:198
+msgid "Number of items"
+msgstr ""
+
+#: widgets/widget_testimonials.php:200
 msgid "All items"
 msgstr ""
 
-#: widgets/widget_testimonials.php:267
+#: widgets/widget_testimonials.php:219
+msgid "Show Name/Company"
+msgstr ""
+
+#: widgets/widget_testimonials.php:258
+msgid "Animation effect"
+msgstr ""
+
+#: widgets/widget_testimonials.php:260
 msgid "Fade"
 msgstr ""
 
-#: widgets/widget_testimonials.php:268
+#: widgets/widget_testimonials.php:261
 msgid "Slide"
 msgstr ""
 
-#: widgets/widget_twitter.php:61
-msgid "Posted on"
+#: widgets/widget_twitter.php:66
+msgid "Twitter Username is not set"
+msgstr ""
+
+#: widgets/widget_twitter.php:97
+msgid "Twitter"
+msgstr ""
+
+#: widgets/widget_twitter.php:126
+msgid "Username"
+msgstr ""
+
+#: widgets/widget_twitter.php:139
+msgid "Number of tweets"
+msgstr ""
+
+#: widgets/widget_twitter.php:152
+msgid "Enable links"
+msgstr ""
+
+#: widgets/widget_twitter.php:165
+msgid "Enable images"
+msgstr ""
+
+#: widgets/widget_twitter.php:178
+msgid "Show user"
+msgstr ""
+
+#: widgets/widget_twitter.php:191
+msgid "Show time"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
@@ -868,7 +1007,7 @@ msgstr ""
 
 #. Plugin URI of the plugin/theme
 #. Author URI of the plugin/theme
-msgid "https://themeforest.net/user/"
+msgid "https://themeforest.net/user/ThemeMakers"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -876,5 +1015,5 @@ msgid "Includes Portfolio Custom Post Types and Visual Composer Shortcodes"
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "..."
+msgid "ThemeMakers"
 msgstr ""

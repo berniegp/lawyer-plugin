@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lawyer Theme Plugin\n"
-"POT-Creation-Date: 2018-08-15 00:25+0200\n"
-"PO-Revision-Date: 2018-08-15 00:25+0200\n"
+"POT-Creation-Date: 2018-12-06 21:01+0100\n"
+"PO-Revision-Date: 2018-12-06 21:01+0100\n"
 "Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
 "Language-Team: Alex TM <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -41,7 +41,15 @@ msgstr ""
 msgid "not found categories"
 msgstr ""
 
-#: helper-functions.php:465
+#: helper-functions.php:152 post-types/locations.php:11
+msgid "Location"
+msgstr ""
+
+#: helper-functions.php:168
+msgid "Select location"
+msgstr ""
+
+#: helper-functions.php:404
 msgid "All"
 msgstr ""
 
@@ -247,10 +255,6 @@ msgstr ""
 msgid "Locations"
 msgstr ""
 
-#: post-types/locations.php:11
-msgid "Location"
-msgstr ""
-
 #: post-types/people.php:10 post-types/people.php:11
 #: shortcodes/lawyer_people.php:6
 msgid "People"
@@ -259,6 +263,10 @@ msgstr ""
 #: post-types/people.php:26 shortcodes/lawyer_practice_area.php:7
 #: widgets/widget_practice_areas.php:79
 msgid "Practice areas"
+msgstr ""
+
+#: post-types/people.php:32
+msgid "Add New Practice area"
 msgstr ""
 
 #: post-types/people.php:41
@@ -379,7 +387,7 @@ msgstr ""
 #: widgets/widget_offices.php:87 widgets/widget_practice_areas.php:90
 #: widgets/widget_recent_posts.php:148 widgets/widget_sectors.php:90
 #: widgets/widget_subscriptions.php:71 widgets/widget_testimonials.php:152
-#: widgets/widget_twitter.php:122
+#: widgets/widget_twitter.php:113
 msgid "Title"
 msgstr ""
 
@@ -961,39 +969,35 @@ msgstr ""
 msgid "Slide"
 msgstr ""
 
-#: widgets/widget_twitter.php:63
-msgid "Posted on"
+#: widgets/widget_twitter.php:66
+msgid "Twitter Username is not set"
 msgstr ""
 
-#: widgets/widget_twitter.php:105
+#: widgets/widget_twitter.php:97
 msgid "Twitter"
 msgstr ""
 
-#: widgets/widget_twitter.php:135
-msgid "Count of tweets"
-msgstr ""
-
-#: widgets/widget_twitter.php:146
+#: widgets/widget_twitter.php:126
 msgid "Username"
 msgstr ""
 
-#: widgets/widget_twitter.php:159
-msgid "Show icons"
+#: widgets/widget_twitter.php:139
+msgid "Number of tweets"
 msgstr ""
 
-#: widgets/widget_twitter.php:171
+#: widgets/widget_twitter.php:152
 msgid "Enable links"
 msgstr ""
 
-#: widgets/widget_twitter.php:184
+#: widgets/widget_twitter.php:165
 msgid "Enable images"
 msgstr ""
 
-#: widgets/widget_twitter.php:197
+#: widgets/widget_twitter.php:178
 msgid "Show user"
 msgstr ""
 
-#: widgets/widget_twitter.php:210
+#: widgets/widget_twitter.php:191
 msgid "Show time"
 msgstr ""
 
