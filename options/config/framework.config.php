@@ -128,9 +128,10 @@ $options[]      = array(
 		),
 		array(
 			'id'         => 'header_info_text',
-			'type'       => 'text',
+			'type'       => 'textarea',
 			'title'      => 'Info text',
-			'dependency' => array( 'header_additional_info', '==', true )
+			'dependency' => array( 'header_additional_info', '==', true ),
+			'desc'   	 => esc_html__('Allowed HTML tags: div, span, a', 'lawyer'),
 		),
 		array(
 			'id'         => 'header_style',
