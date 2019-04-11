@@ -6,7 +6,7 @@ if ( class_exists( 'Interactive_Map_Builder' ) ) {
 	$maps = Interactive_Map::get_maps();
 	$maps_list = array( 'Select map' => '' );
 
-	if (( count( $maps ) ) > 0) {
+	if ($maps && ( count( $maps ) ) > 0) {
 		foreach ( $maps as $key => $map ) {
 			$maps_list[ esc_html( $map->get_name() ) ] = $map->get_id();
 		}
