@@ -83,7 +83,7 @@ class WPBakeryShortCode_lawyer_accordion extends WPBakeryShortCode{
 					<?php if( ! empty( $item['title'] ) && ! empty( $item['text'] ) ) { ?>
 						<li class="accordion-item">
 							<div role="tab" class="accordion-title"> <?php echo esc_html( $item['title'] ); ?> </div>
-							<div class="accordion-content" role="tabpanel"><?php echo esc_html( $item['text'] ); ?></div>
+							<div class="accordion-content" role="tabpanel"><?php echo wpautop ( esc_html( $item['text'] ) ); ?></div>
 						</li>
 					<?php } ?>
 				<?php } ?>

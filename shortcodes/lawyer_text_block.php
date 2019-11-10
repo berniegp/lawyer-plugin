@@ -43,7 +43,7 @@ class WPBakeryShortCode_lawyer_text extends WPBakeryShortCode{
 			$class .= vc_shortcode_custom_css_class( $css, ' ' );
 
 			ob_start(); ?>
-				<div class="lawyer-text-block <?php echo esc_attr( $class ); ?>"><p><?php echo $content; ?></p></div>
+				<div class="lawyer-text-block <?php echo esc_attr( $class ); ?>"><p><?php echo wpautop( wp_kses_post( $content ) ); ?></p></div>
 			<?php
 			return ob_get_clean();
 		}

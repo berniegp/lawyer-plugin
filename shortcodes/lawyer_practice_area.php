@@ -186,7 +186,7 @@ class WPBakeryShortCode_lawyer_practice_areas extends WPBakeryShortCode
 							<section class="tile effect-bubba">
 								<div class="tile__icon <?php echo esc_attr( $practice_fields['icon'] ); ?>"></div>
 								<h3 class="tile__title"><?php echo esc_html( $term->name ); ?></h3>
-								<p class="tile__description"><?php echo $description; ?></p>
+								<p class="tile__description"><?php echo esc_html( $description ); ?></p>
 								<i class="tile__arrow icon-right-4"></i>
 								<a href="<?php echo esc_html( $term_link ); ?>" class="tile__link"></a>
 							</section>

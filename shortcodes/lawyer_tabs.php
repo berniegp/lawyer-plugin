@@ -53,19 +53,19 @@ class WPBakeryShortCode_lawyer_tabs extends WPBakeryShortCodesContainer{
 
 					$active = $counter == 0 ? 'active' : '';
 
-					$tabs_title .= '<li class="' . $active . ' "><a href="#">' . esc_html( $item['atts']['title'] ) . '</a></li>';
-					$tabs_content .= '<div class="tabs-item ' . $active . '">' . wp_kses_post( $item['content'] ) . '</div>';
+					$tabs_title .= '<li class="' . $active . ' "><a href="#">' . $item['atts']['title'] . '</a></li>';
+					$tabs_content .= '<div class="tabs-item ' . $active . '">' . $item['content'] . '</div>';
 					$counter++;
 				}
 			} ?>
 			<div class="tabs <?php echo esc_attr( $class );?>">
 				<div class="tabs-header">
 					<ul>
-						<?php echo $tabs_title; ?>
+						<?php echo wp_kses_post( $tabs_title ); ?>
 					</ul>
 				</div>
 				<div class="tabs-content">
-					<?php echo $tabs_content; ?>
+					<?php echo wpautop ( wp_kses_post( $tabs_content ) ); ?>
 				</div>
 			</div>
 		<?php
