@@ -12,7 +12,7 @@ if ( ! function_exists( 'lawyer_register_people_post_type' ) ) {
 				),
 				'menu_icon'   		 => 'dashicons-groups',
 				'public' 	  		 => true,
-				'supports'    		 => array( 'title', 'editor', 'thumbnail' ),
+				'supports'    		 => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
 				'has_archive' 		 => true,
 				'rewrite'     		 => array('slug' => 'people'),
 			)

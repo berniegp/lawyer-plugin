@@ -79,7 +79,8 @@ class WPBakeryShortCode_lawyer_people extends WPBakeryShortCode{
 		$args = array(
 			'post_type'      	  => 'people',
 			'ignore_sticky_posts' => true,
-			'posts_per_page' 	  => $limit
+			'posts_per_page' 	  => $limit,
+			'orderby'        	  => array( 'menu_order' => 'ASC', 'date' => 'DESC' ),
 		);
 
 		if ( ! empty( $predefined ) ) {

@@ -323,6 +323,8 @@ if ( ! function_exists( 'lawyer_search_lawyers' ) ) {
 
 			if ( isset( $term_data['random'] ) && $term_data['random'] ) {
 				$query->set( 'orderby', 'rand' );
+			} else {
+				$query->set( 'orderby', array( 'menu_order' => 'ASC', 'date' => 'DESC' ) );
 			}
 		}
 	}
