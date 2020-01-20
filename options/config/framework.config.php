@@ -61,7 +61,8 @@ $options[]      = array(
             'id'         => 'custom_css_styles',
             'desc'       => 'Only CSS, without tag &lt;style&gt;.',
             'type'       => 'textarea',
-            'title'      => 'Custom css code'
+            'title'      => 'Custom css code',
+            'sanitize'   => false
         ),
         array(
             'id'         => 'custom_js_code',
